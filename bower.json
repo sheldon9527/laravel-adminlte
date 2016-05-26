@@ -1,0 +1,30 @@
+{
+  "name": "public",
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "AdminLTE": "admin-lte#~2.3.2",
+    "bootbox.js": "bootbox#~4.4.0",
+    "font-awesome": "~4.4.0",
+    "html5shiv": "~3.7.3",
+    "Ionicons": "ionicons#~2.0.1",
+    "raphael": "~2.1.4",
+    "requirejs": "~2.1.22",
+    "respond": "~1.4.2",
+    "cropit": "~0.4.5",
+    "bootstrap-wysiwyg": "bootstrap-wysiwyg-steveathon#^1.0.5",
+    "eonasdan-bootstrap-datetimepicker": "^4.17.37"
+  }
+}

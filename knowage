@@ -1,0 +1,2 @@
+## 数据添加权限
+grant all privileges on test.* to sheldon@127.0.0.1 identified by '123456';
