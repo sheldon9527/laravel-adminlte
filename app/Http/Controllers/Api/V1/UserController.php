@@ -17,27 +17,29 @@ class UserController extends BaseController
 
         $validator = \Validator::make($this->request->all(), $rules);
 
-        if ($validator->fails()) {
-            return $this->errorBadRequest($validator->messages()->all());
-        }
-
-        //登录名
         $username = $this->request->get('name');
-        //密码
         $password = $this->request->get('password');
 
-        //email
         $credentials = [
             'email' => $username,
             'password' => $password,
         ];
 
-        $token = \JWTAuth::attempt($credentials);
+        if (!$token = \JWTAuth::attempt($credentials)) {
+            $validator->after(function ($validator) {
+                $validator->errors()->add('message', trans('error.auth.invalid_login'));
+            });
+        }
+
+        if ($validator->fails()) {
+            return $this->errorBadRequest($validator->messages()->all());
+        }
 
         $user = \Auth::user();
 
         return $this->response->item($user, new UserTransformer())->addMeta('token', $token);
     }
+    
     public function show($id)
     {
         $user = \Auth::user();
