@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 //使用了软删除
 // auth验证类别为eloquent，需要实现接口并使用trait

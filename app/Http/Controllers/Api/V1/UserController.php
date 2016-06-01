@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Api\BaseController;
-use App\User;
+use App\Models\User;
 use App\Transformers\UserTransformer;
 
 class UserController extends BaseController
