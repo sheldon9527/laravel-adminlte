@@ -4057,5 +4057,51 @@
         "keywords": [
             "promise"
         ]
+    },
+    {
+        "name": "marlek/laravel-automigrate",
+        "version": "2.0",
+        "version_normalized": "2.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/marlek/laravel-automigrate.git",
+            "reference": "7a6d3ec46367f88276df113bfe0239ffe5a62270"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/marlek/laravel-automigrate/zipball/7a6d3ec46367f88276df113bfe0239ffe5a62270",
+            "reference": "7a6d3ec46367f88276df113bfe0239ffe5a62270",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/support": "5.*",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "phpspec/phpspec": "2.0.*@dev"
+        },
+        "time": "2016-02-02 08:54:32",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Marlek\\LaravelAutomigrate": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Marko Lekić",
+                "email": "markotheman@gmail.com"
+            }
+        ],
+        "description": "Laravel package which allows automatically running migrations from different folders, useful when you have custom folder structure",
+        "keywords": [
+            "laravel",
+            "migrations"
+        ]
     }
 ]

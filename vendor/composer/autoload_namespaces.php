@@ -14,6 +14,7 @@ return array(
     'Namshi\\JOSE' => array($vendorDir . '/namshi/jose/src'),
     'Mockery' => array($vendorDir . '/mockery/mockery/library'),
     'Math' => array($vendorDir . '/phpseclib/phpseclib/phpseclib'),
+    'Marlek\\LaravelAutomigrate' => array($vendorDir . '/marlek/laravel-automigrate/src'),
     'JakubOnderka\\PhpConsoleHighlighter' => array($vendorDir . '/jakub-onderka/php-console-highlighter/src'),
     'JakubOnderka\\PhpConsoleColor' => array($vendorDir . '/jakub-onderka/php-console-color/src'),
     'File' => array($vendorDir . '/phpseclib/phpseclib/phpseclib'),

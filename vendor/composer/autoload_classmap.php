@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'AddUserTableSeeder' => $baseDir . '/database/seeds/AddUserTableSeeder.php',
+    'CreateAdminTable' => $baseDir . '/database/migrations/2016_06_01_141233_create_admin_table.php',
     'CreateOauthAccessTokenScopesTable' => $baseDir . '/database/migrations/2014_04_24_111657_create_oauth_access_token_scopes_table.php',
     'CreateOauthAccessTokensTable' => $baseDir . '/database/migrations/2014_04_24_111518_create_oauth_access_tokens_table.php',
     'CreateOauthAuthCodeScopesTable' => $baseDir . '/database/migrations/2014_04_24_111403_create_oauth_auth_code_scopes_table.php',
@@ -21,7 +22,6 @@ return array(
     'CreateOauthScopesTable' => $baseDir . '/database/migrations/2014_04_24_110151_create_oauth_scopes_table.php',
     'CreateOauthSessionScopesTable' => $baseDir . '/database/migrations/2014_04_24_111109_create_oauth_session_scopes_table.php',
     'CreateOauthSessionsTable' => $baseDir . '/database/migrations/2014_04_24_111002_create_oauth_sessions_table.php',
-    'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',

@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "20d77ddc0b7cf0f162497381b9066adf",
-    "content-hash": "285a2da7d6ebc61149a3c591f68c5994",
+    "hash": "e5243bbae83bc78a36fd6b95b6f1c36a",
+    "content-hash": "aab4082af7b448f20f8a0e4dba17d661",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -1186,6 +1186,50 @@
                 "server"
             ],
             "time": "2016-01-29 13:11:59"
+        },
+        {
+            "name": "marlek/laravel-automigrate",
+            "version": "2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/marlek/laravel-automigrate.git",
+                "reference": "7a6d3ec46367f88276df113bfe0239ffe5a62270"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/marlek/laravel-automigrate/zipball/7a6d3ec46367f88276df113bfe0239ffe5a62270",
+                "reference": "7a6d3ec46367f88276df113bfe0239ffe5a62270",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpspec/phpspec": "2.0.*@dev"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Marlek\\LaravelAutomigrate": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marko Lekić",
+                    "email": "markotheman@gmail.com"
+                }
+            ],
+            "description": "Laravel package which allows automatically running migrations from different folders, useful when you have custom folder structure",
+            "keywords": [
+                "laravel",
+                "migrations"
+            ],
+            "time": "2016-02-02 08:54:32"
         },
         {
             "name": "monolog/monolog",
