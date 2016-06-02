@@ -1,1 +1,19 @@
+.DS_Store
+.vagrant
+.idea
+.idea/*
+*.bak
+.project
+.settings
+.buildpath
+tmp/
+config/local
+config/test
+/vendor
+/node_modules
+/doc
+.env
+*.swp
+.swo
 
+apidoc.json
