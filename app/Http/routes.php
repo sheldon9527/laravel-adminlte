@@ -29,6 +29,9 @@ Route::get('/', function () {
 $api = app('Dingo\Api\Routing\Router');
 
 $api->version('v1', ['namespace' => 'App\Http\Controllers\Api\V1'], function ($api) {
+
+    //guzzlehttp
+    $api->get('curl', 'GuzzleHttpController@getInfo');
     $api->post('login', 'UserController@login');
     $api->group(['middleware' => 'api.auth'], function ($api) {
         $api->get('users/{id}', 'UserController@show');
