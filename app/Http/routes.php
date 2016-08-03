@@ -11,10 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -26,20 +22,13 @@ Route::get('/', function () {
 |
 */
 
-$api = app('Dingo\Api\Routing\Router');
-
-$api->version('v1', ['namespace' => 'App\Http\Controllers\Api\V1'], function ($api) {
-
-    //guzzlehttp
-    $api->get('curl', 'GuzzleHttpController@getInfo');
-    $api->post('login', 'UserController@login');
-    $api->group(['middleware' => 'api.auth'], function ($api) {
-        $api->get('users/{id}', 'UserController@show');
-        $api->get('users', 'UserController@index');
-    });
+Route::group(['namespace' => 'Front'], function () {
+    // 首页
+    Route::get('', [
+        'as' => 'front.index',
+        'uses' => 'HomeController@index',
+    ]);
 });
-
-
 
 Route::group(['namespace' => 'Admin', 'prefix' => 'manager'], function () {
 

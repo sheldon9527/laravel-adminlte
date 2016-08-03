@@ -17,11 +17,6 @@ class AppServiceProvider extends ServiceProvider
         $language = strtolower(substr($language, 0, 2));
         //有fallback_locale 所以不用担心传入错误
         app()->setLocale($language);
-
-        // 如果有跳转等情况，需要把token放在url中
-        if ($token = \Request::get('token')) {
-            app('request')->headers->set('Authorization','Bearer '.$token);
-        }
     }
 
     /**

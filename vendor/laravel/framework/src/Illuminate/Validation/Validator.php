@@ -7,8 +7,8 @@ use DateTime;
 use Countable;
 use Exception;
 use DateTimeZone;
-use Carbon\Carbon;
 use RuntimeException;
+use DateTimeInterface;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use BadMethodCallException;
@@ -1296,6 +1296,10 @@ class Validator implements ValidatorContract
             if (strtolower($id) == 'null') {
                 $id = null;
             }
+
+            if (filter_var($id, FILTER_VALIDATE_INT) !== false) {
+                $id = intval($id);
+            }
         }
 
         // The presence verifier is responsible for counting rows within this store
@@ -1504,7 +1508,7 @@ class Validator implements ValidatorContract
             (/?|/\S+|\?\S*|\#\S*)                   # a /, nothing, a / with something, a query or a fragment
         $~ixu';
 
-        return preg_match($pattern, $value) === 1;
+        return preg_match($pattern, $value) > 0;
     }
 
     /**
@@ -1561,7 +1565,7 @@ class Validator implements ValidatorContract
      */
     protected function validateDimensions($attribute, $value, $parameters)
     {
-        if (! $sizeDetails = getimagesize($value->getRealPath())) {
+        if (! $this->isAValidFileInstance($value) || ! $sizeDetails = getimagesize($value->getRealPath())) {
             return false;
         }
 
@@ -1665,7 +1669,7 @@ class Validator implements ValidatorContract
             return false;
         }
 
-        return preg_match('/^[\pL\pM\pN]+$/u', $value);
+        return preg_match('/^[\pL\pM\pN]+$/u', $value) > 0;
     }
 
     /**
@@ -1681,7 +1685,7 @@ class Validator implements ValidatorContract
             return false;
         }
 
-        return preg_match('/^[\pL\pM\pN_-]+$/u', $value);
+        return preg_match('/^[\pL\pM\pN_-]+$/u', $value) > 0;
     }
 
     /**
@@ -1700,7 +1704,7 @@ class Validator implements ValidatorContract
 
         $this->requireParameterCount(1, $parameters, 'regex');
 
-        return preg_match($parameters[0], $value);
+        return preg_match($parameters[0], $value) > 0;
     }
 
     /**
@@ -1758,7 +1762,7 @@ class Validator implements ValidatorContract
     {
         $this->requireParameterCount(1, $parameters, 'before');
 
-        if (! is_string($value) && ! is_numeric($value) && ! $value instanceof Carbon) {
+        if (! is_string($value) && ! is_numeric($value) && ! $value instanceof DateTimeInterface) {
             return false;
         }
 
@@ -1766,11 +1770,11 @@ class Validator implements ValidatorContract
             return $this->validateBeforeWithFormat($format, $value, $parameters);
         }
 
-        if (! ($date = strtotime($parameters[0]))) {
-            return strtotime($value) < strtotime($this->getValue($parameters[0]));
+        if (! $date = $this->getDateTimestamp($parameters[0])) {
+            $date = $this->getDateTimestamp($this->getValue($parameters[0]));
         }
 
-        return strtotime($value) < $date;
+        return $this->getDateTimestamp($value) < $date;
     }
 
     /**
@@ -1800,7 +1804,7 @@ class Validator implements ValidatorContract
     {
         $this->requireParameterCount(1, $parameters, 'after');
 
-        if (! is_string($value) && ! is_numeric($value) && ! $value instanceof Carbon) {
+        if (! is_string($value) && ! is_numeric($value) && ! $value instanceof DateTimeInterface) {
             return false;
         }
 
@@ -1808,11 +1812,11 @@ class Validator implements ValidatorContract
             return $this->validateAfterWithFormat($format, $value, $parameters);
         }
 
-        if (! ($date = strtotime($parameters[0]))) {
-            return strtotime($value) > strtotime($this->getValue($parameters[0]));
+        if (! $date = $this->getDateTimestamp($parameters[0])) {
+            $date = $this->getDateTimestamp($this->getValue($parameters[0]));
         }
 
-        return strtotime($value) > $date;
+        return $this->getDateTimestamp($value) > $date;
     }
 
     /**
@@ -1898,6 +1902,17 @@ class Validator implements ValidatorContract
         if ($result = $this->getRule($attribute, 'DateFormat')) {
             return $result[1][0];
         }
+    }
+
+    /**
+     * Get the date timestamp.
+     *
+     * @param  mixed  $value
+     * @return int
+     */
+    protected function getDateTimestamp($value)
+    {
+        return $value instanceof DateTimeInterface ? $value->getTimestamp() : strtotime($value);
     }
 
     /**
@@ -2062,8 +2077,8 @@ class Validator implements ValidatorContract
         $value = $this->getAttribute($attribute);
 
         $message = str_replace(
-            [':ATTRIBUTE', ':Attribute', ':attribute'],
-            [Str::upper($value), Str::ucfirst($value), $value],
+            [':attribute', ':ATTRIBUTE', ':Attribute'],
+            [$value, Str::upper($value), Str::ucfirst($value)],
             $message
         );
 

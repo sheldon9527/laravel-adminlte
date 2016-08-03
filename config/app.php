@@ -156,15 +156,6 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-
-        Dingo\Api\Provider\LaravelServiceProvider::class,
-        LucaDegasperi\OAuth2Server\Storage\FluentStorageServiceProvider::class,
-        LucaDegasperi\OAuth2Server\OAuth2ServerServiceProvider::class,
-        Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
-
-        //automigration
-        'Marlek\LaravelAutomigrate\LaravelAutomigrateServiceProvider'
-
     ],
 
     /*
@@ -210,12 +201,6 @@ return [
         'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
-
-
-
-        'Authorizer' => LucaDegasperi\OAuth2Server\Facades\Authorizer::class,
-        'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
-
 
     ],
 
