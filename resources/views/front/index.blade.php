@@ -1,137 +1,105 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="gb2312">
-<title>¸öÈË²©¿ÍÄ£°å£¨Ñ°ÃÎ£©</title>
-<meta name="keywords" content="¸öÈË²©¿ÍÄ£°å,²©¿ÍÄ£°å" />
-<meta name="description" content="Ñ°ÃÎÖ÷ÌâµÄ¸öÈË²©¿ÍÄ£°å£¬ÓÅÑÅ¡¢ÎÈÖØ¡¢´óÆø,µÍµ÷¡£" />
-<link href="css/base.css" rel="stylesheet">
-<link href="css/index.css" rel="stylesheet">
-<!--[if lt IE 9]>
-<script src="js/modernizr.js"></script>
-<![endif]-->
-</head>
-<body>
-<header>
-  <div id="logo"><a href="/"></a></div>
-  <nav class="topnav" id="topnav"><a href="index.html"><span>Ê×Ò³</span><span class="en">Protal</span></a><a href="about.html"><span>¹ØÓÚÎÒ</span><span class="en">About</span></a><a href="newlist.html"><span>ÂýÉú»î</span><span class="en">Life</span></a><a href="moodlist.html"><span>ËéÑÔËéÓï</span><span class="en">Doing</span></a><a href="share.html"><span>Ä£°å·ÖÏí</span><span class="en">Share</span></a><a href="knowledge.html"><span>Ñ§ÎÞÖ¹¾³</span><span class="en">Learn</span></a><a href="book.html"><span>ÁôÑÔ°æ</span><span class="en">Gustbook</span></a></nav>
-  </nav>
-</header>
-<div class="banner">
-  <section class="box">
-    <ul class="texts">
-      <p>´òÁËËÀ½áµÄÇà´º£¬À¦ËÀÒ»¿Å²Ô°×¾øÍûµÄÁé»ê¡£</p>
-      <p>Îª×Ô¼º¾òÒ»¸ö·ØÄ¹À´ÔáÐÄ£¬ºì³¾Ò»ÃÎ£¬²»ÔÙ×·Ñ°¡£</p>
-      <p>¼ÓÁËËøµÄÇà´º£¬²»»áÔÙÒòË­¶øÍÆ¿ªÐÄÃÅ¡£</p>
+@extends('front.layout')
+@section('content')
+<h2 class="title_tj"><p><span>æ–‡ç« æŽ¨è</span></p></h2>
+<div class="bloglist left">
+    <h3>ç¨‹åºå‘˜è¯·æ”¾ä¸‹ä½ çš„æŠ€æœ¯æƒ…èŠ‚ï¼Œä¸Žä½ çš„åŒä¼´ä¸€èµ·è¿›æ­¥</h3>
+    <figure><img src="{{url('front/images/001.png')}}"></figure>
+    <ul>
+        <p>å¦‚æžœè¯´æŽŒæ¡ä¸€é—¨èµ–ä»¥ç”Ÿè®¡çš„æŠ€æœ¯æ˜¯æŠ€æœ¯äººå‘˜è¦å­¦ä¼šçš„ç¬¬ä¸€è¯¾çš„è¯ï¼Œ é‚£ä¹ˆæˆ‘è§‰å¾—æŠ€æœ¯äººå‘˜è¦çœŸæ­£å­¦ä¼šçš„ç¬¬äºŒè¯¾ï¼Œ
+        ä¸æ˜¯æŠ€æœ¯ï¼Œè€Œæ˜¯ä¸šåŠ¡ã€äº¤æµä¸Žåä½œï¼Œå­¦ä¼šå…³å¿ƒå…¶ä»–å·¥ä½œä¼™ä¼´çš„å·¥ä½œæƒ…å†µå’Œè¿›å±•...</p>
+        <a title="/" href="/" target="_blank" class="readmore">é˜…è¯»å…¨æ–‡>></a>
     </ul>
-    <div class="avatar"><a href="#"><span>ÑîÇà</span></a> </div>
-  </section>
+    <p class="dateview"><span>2013-11-04</span><span>ä½œè€…</span><span>æ¨é’ä¸ªäººåšå®¢ï¼š[<a href="/news/life/">ç¨‹åºäººç”Ÿ</a>]</span></p>
+
+    <h3>ç¨‹åºå‘˜è¯·æ”¾ä¸‹ä½ çš„æŠ€æœ¯æƒ…èŠ‚ï¼Œä¸Žä½ çš„åŒä¼´ä¸€èµ·è¿›æ­¥</h3>
+    <figure><img src="{{url('front/images/001.png')}}"></figure>
+    <ul>
+        <p>å¦‚æžœè¯´æŽŒæ¡ä¸€é—¨èµ–ä»¥ç”Ÿè®¡çš„æŠ€æœ¯æ˜¯æŠ€æœ¯äººå‘˜è¦å­¦ä¼šçš„ç¬¬ä¸€è¯¾çš„è¯ï¼Œ é‚£ä¹ˆæˆ‘è§‰å¾—æŠ€æœ¯äººå‘˜è¦çœŸæ­£å­¦ä¼šçš„ç¬¬äºŒè¯¾ï¼Œ
+        ä¸æ˜¯æŠ€æœ¯ï¼Œè€Œæ˜¯ä¸šåŠ¡ã€äº¤æµä¸Žåä½œï¼Œå­¦ä¼šå…³å¿ƒå…¶ä»–å·¥ä½œä¼™ä¼´çš„å·¥ä½œæƒ…å†µå’Œè¿›å±•...</p>
+        <a title="/" href="/" target="_blank" class="readmore">é˜…è¯»å…¨æ–‡>></a>
+    </ul>
+    <p class="dateview"><span>2013-11-04</span><span>ä½œè€…</span><span>æ¨é’ä¸ªäººåšå®¢ï¼š[<a href="/news/life/">ç¨‹åºäººç”Ÿ</a>]</span></p>
+
+    <h3>ç¨‹åºå‘˜è¯·æ”¾ä¸‹ä½ çš„æŠ€æœ¯æƒ…èŠ‚ï¼Œä¸Žä½ çš„åŒä¼´ä¸€èµ·è¿›æ­¥</h3>
+    <figure><img src="{{url('front/images/001.png')}}"></figure>
+    <ul>
+        <p>å¦‚æžœè¯´æŽŒæ¡ä¸€é—¨èµ–ä»¥ç”Ÿè®¡çš„æŠ€æœ¯æ˜¯æŠ€æœ¯äººå‘˜è¦å­¦ä¼šçš„ç¬¬ä¸€è¯¾çš„è¯ï¼Œ é‚£ä¹ˆæˆ‘è§‰å¾—æŠ€æœ¯äººå‘˜è¦çœŸæ­£å­¦ä¼šçš„ç¬¬äºŒè¯¾ï¼Œ
+        ä¸æ˜¯æŠ€æœ¯ï¼Œè€Œæ˜¯ä¸šåŠ¡ã€äº¤æµä¸Žåä½œï¼Œå­¦ä¼šå…³å¿ƒå…¶ä»–å·¥ä½œä¼™ä¼´çš„å·¥ä½œæƒ…å†µå’Œè¿›å±•...</p>
+        <a title="/" href="/" target="_blank" class="readmore">é˜…è¯»å…¨æ–‡>></a>
+    </ul>
+    <p class="dateview"><span>2013-11-04</span><span>ä½œè€…</span><span>æ¨é’ä¸ªäººåšå®¢ï¼š[<a href="/news/life/">ç¨‹åºäººç”Ÿ</a>]</span></p>
+
+    <h3>ç¨‹åºå‘˜è¯·æ”¾ä¸‹ä½ çš„æŠ€æœ¯æƒ…èŠ‚ï¼Œä¸Žä½ çš„åŒä¼´ä¸€èµ·è¿›æ­¥</h3>
+    <figure><img src="{{url('front/images/001.png')}}"></figure>
+    <ul>
+        <p>å¦‚æžœè¯´æŽŒæ¡ä¸€é—¨èµ–ä»¥ç”Ÿè®¡çš„æŠ€æœ¯æ˜¯æŠ€æœ¯äººå‘˜è¦å­¦ä¼šçš„ç¬¬ä¸€è¯¾çš„è¯ï¼Œ é‚£ä¹ˆæˆ‘è§‰å¾—æŠ€æœ¯äººå‘˜è¦çœŸæ­£å­¦ä¼šçš„ç¬¬äºŒè¯¾ï¼Œ
+        ä¸æ˜¯æŠ€æœ¯ï¼Œè€Œæ˜¯ä¸šåŠ¡ã€äº¤æµä¸Žåä½œï¼Œå­¦ä¼šå…³å¿ƒå…¶ä»–å·¥ä½œä¼™ä¼´çš„å·¥ä½œæƒ…å†µå’Œè¿›å±•...</p>
+        <a title="/" href="/" target="_blank" class="readmore">é˜…è¯»å…¨æ–‡>></a>
+    </ul>
+    <p class="dateview"><span>2013-11-04</span><span>ä½œè€…</span><span>æ¨é’ä¸ªäººåšå®¢ï¼š[<a href="/news/life/">ç¨‹åºäººç”Ÿ</a>]</span></p>
+
+    <h3>ç¨‹åºå‘˜è¯·æ”¾ä¸‹ä½ çš„æŠ€æœ¯æƒ…èŠ‚ï¼Œä¸Žä½ çš„åŒä¼´ä¸€èµ·è¿›æ­¥</h3>
+    <figure><img src="{{url('front/images/001.png')}}"></figure>
+    <ul>
+        <p>å¦‚æžœè¯´æŽŒæ¡ä¸€é—¨èµ–ä»¥ç”Ÿè®¡çš„æŠ€æœ¯æ˜¯æŠ€æœ¯äººå‘˜è¦å­¦ä¼šçš„ç¬¬ä¸€è¯¾çš„è¯ï¼Œ é‚£ä¹ˆæˆ‘è§‰å¾—æŠ€æœ¯äººå‘˜è¦çœŸæ­£å­¦ä¼šçš„ç¬¬äºŒè¯¾ï¼Œ
+        ä¸æ˜¯æŠ€æœ¯ï¼Œè€Œæ˜¯ä¸šåŠ¡ã€äº¤æµä¸Žåä½œï¼Œå­¦ä¼šå…³å¿ƒå…¶ä»–å·¥ä½œä¼™ä¼´çš„å·¥ä½œæƒ…å†µå’Œè¿›å±•...</p>
+        <a title="/" href="/" target="_blank" class="readmore">é˜…è¯»å…¨æ–‡>></a>
+    </ul>
+    <p class="dateview"><span>2013-11-04</span><span>ä½œè€…</span><span>æ¨é’ä¸ªäººåšå®¢ï¼š[<a href="/news/life/">ç¨‹åºäººç”Ÿ</a>]</span></p>
+
+    <h3>ç¨‹åºå‘˜è¯·æ”¾ä¸‹ä½ çš„æŠ€æœ¯æƒ…èŠ‚ï¼Œä¸Žä½ çš„åŒä¼´ä¸€èµ·è¿›æ­¥</h3>
+    <figure><img src="{{url('front/images/001.png')}}"></figure>
+    <ul>
+        <p>å¦‚æžœè¯´æŽŒæ¡ä¸€é—¨èµ–ä»¥ç”Ÿè®¡çš„æŠ€æœ¯æ˜¯æŠ€æœ¯äººå‘˜è¦å­¦ä¼šçš„ç¬¬ä¸€è¯¾çš„è¯ï¼Œ é‚£ä¹ˆæˆ‘è§‰å¾—æŠ€æœ¯äººå‘˜è¦çœŸæ­£å­¦ä¼šçš„ç¬¬äºŒè¯¾ï¼Œ
+        ä¸æ˜¯æŠ€æœ¯ï¼Œè€Œæ˜¯ä¸šåŠ¡ã€äº¤æµä¸Žåä½œï¼Œå­¦ä¼šå…³å¿ƒå…¶ä»–å·¥ä½œä¼™ä¼´çš„å·¥ä½œæƒ…å†µå’Œè¿›å±•...</p>
+        <a title="/" href="/" target="_blank" class="readmore">é˜…è¯»å…¨æ–‡>></a>
+    </ul>
+    <p class="dateview"><span>2013-11-04</span><span>ä½œè€…</span><span>æ¨é’ä¸ªäººåšå®¢ï¼š[<a href="/news/life/">ç¨‹åºäººç”Ÿ</a>]</span></p>
+
 </div>
-<div class="template">
-  <div class="box">
-    <h3>
-      <p><span>¸öÈË²©¿Í</span>Ä£°å Templates</p>
-    </h3>
-    <ul>
-      <li><a href="/"  target="_blank"><img src="images/01.jpg"></a><span>·ÂÐÂÀË²©¿Í·ç¸ñ¡¤Ã·¡ª¡ª¹Åµä¸öÈË²©¿ÍÄ£°å</span></li>
-      <li><a href="/" target="_blank"><img src="images/02.jpg"></a><span>ºÚÉ«ÖÊ¸ÐÊ±¼äÖáhtml5¸öÈË²©¿ÍÄ£°å</span></li>
-      <li><a href="/"  target="_blank"><img src="images/03.jpg"></a><span>GreenÂÌÉ«Ð¡ÇåÐÂµÄÏÄÌì-¸öÈË²©¿ÍÄ£°å</span></li>
-      <li><a href="/" target="_blank"><img src="images/04.jpg"></a><span>Å®ÉúÇåÐÂ¸öÈË²©¿ÍÍøÕ¾Ä£°å</span></li>
-      <li><a href="/"  target="_blank"><img src="images/02.jpg"></a><span>ºÚÉ«ÖÊ¸ÐÊ±¼äÖáhtml5¸öÈË²©¿ÍÄ£°å</span></li>
-      <li><a href="/"  target="_blank"><img src="images/03.jpg"></a><span>GreenÂÌÉ«Ð¡ÇåÐÂµÄÏÄÌì-¸öÈË²©¿ÍÄ£°å</span></li>
-    </ul>
-  </div>
-</div>
-<article>
-  <h2 class="title_tj">
-    <p>ÎÄÕÂ<span>ÍÆ¼ö</span></p>
-  </h2>
-  <div class="bloglist left">
-    <h3>³ÌÐòÔ±Çë·ÅÏÂÄãµÄ¼¼ÊõÇé½Ú£¬ÓëÄãµÄÍ¬°éÒ»Æð½ø²½</h3>
-    <figure><img src="images/001.png"></figure>
-    <ul>
-      <p>Èç¹ûËµÕÆÎÕÒ»ÃÅÀµÒÔÉú¼ÆµÄ¼¼ÊõÊÇ¼¼ÊõÈËÔ±ÒªÑ§»áµÄµÚÒ»¿ÎµÄ»°£¬ ÄÇÃ´ÎÒ¾õµÃ¼¼ÊõÈËÔ±ÒªÕæÕýÑ§»áµÄµÚ¶þ¿Î£¬²»ÊÇ¼¼Êõ£¬¶øÊÇÒµÎñ¡¢½»Á÷ÓëÐ­×÷£¬Ñ§»á¹ØÐÄÆäËû¹¤×÷»ï°éµÄ¹¤×÷Çé¿öºÍ½øÕ¹...</p>
-      <a title="/" href="/" target="_blank" class="readmore">ÔÄ¶ÁÈ«ÎÄ>></a>
-    </ul>
-    <p class="dateview"><span>2013-11-04</span><span>×÷Õß£ºÑîÇà</span><span>¸öÈË²©¿Í£º[<a href="/news/life/">³ÌÐòÈËÉú</a>]</span></p>
-    <h3>³ÌÐòÔ±Çë·ÅÏÂÄãµÄ¼¼ÊõÇé½Ú£¬ÓëÄãµÄÍ¬°éÒ»Æð½ø²½</h3>
-    <figure><img src="images/001.png"></figure>
-    <ul>
-      <p>Èç¹ûËµÕÆÎÕÒ»ÃÅÀµÒÔÉú¼ÆµÄ¼¼ÊõÊÇ¼¼ÊõÈËÔ±ÒªÑ§»áµÄµÚÒ»¿ÎµÄ»°£¬ ÄÇÃ´ÎÒ¾õµÃ¼¼ÊõÈËÔ±ÒªÕæÕýÑ§»áµÄµÚ¶þ¿Î£¬²»ÊÇ¼¼Êõ£¬¶øÊÇÒµÎñ¡¢½»Á÷ÓëÐ­×÷£¬Ñ§»á¹ØÐÄÆäËû¹¤×÷»ï°éµÄ¹¤×÷Çé¿öºÍ½øÕ¹...</p>
-      <a title="/" href="/" target="_blank" class="readmore">ÔÄ¶ÁÈ«ÎÄ>></a>
-    </ul>
-    <p class="dateview"><span>2013-11-04</span><span>×÷Õß£ºÑîÇà</span><span>¸öÈË²©¿Í£º[<a href="/news/life/">³ÌÐòÈËÉú</a>]</span></p>
-    <h3>³ÌÐòÔ±Çë·ÅÏÂÄãµÄ¼¼ÊõÇé½Ú£¬ÓëÄãµÄÍ¬°éÒ»Æð½ø²½</h3>
-    <figure><img src="images/001.png"></figure>
-    <ul>
-      <p>Èç¹ûËµÕÆÎÕÒ»ÃÅÀµÒÔÉú¼ÆµÄ¼¼ÊõÊÇ¼¼ÊõÈËÔ±ÒªÑ§»áµÄµÚÒ»¿ÎµÄ»°£¬ ÄÇÃ´ÎÒ¾õµÃ¼¼ÊõÈËÔ±ÒªÕæÕýÑ§»áµÄµÚ¶þ¿Î£¬²»ÊÇ¼¼Êõ£¬¶øÊÇÒµÎñ¡¢½»Á÷ÓëÐ­×÷£¬Ñ§»á¹ØÐÄÆäËû¹¤×÷»ï°éµÄ¹¤×÷Çé¿öºÍ½øÕ¹...</p>
-      <a title="/" href="/" target="_blank" class="readmore">ÔÄ¶ÁÈ«ÎÄ>></a>
-    </ul>
-    <p class="dateview"><span>2013-11-04</span><span>×÷Õß£ºÑîÇà</span><span>¸öÈË²©¿Í£º[<a href="/news/life/">³ÌÐòÈËÉú</a>]</span></p>
-    <h3>³ÌÐòÔ±Çë·ÅÏÂÄãµÄ¼¼ÊõÇé½Ú£¬ÓëÄãµÄÍ¬°éÒ»Æð½ø²½</h3>
-    <figure><img src="images/001.png"></figure>
-    <ul>
-      <p>Èç¹ûËµÕÆÎÕÒ»ÃÅÀµÒÔÉú¼ÆµÄ¼¼ÊõÊÇ¼¼ÊõÈËÔ±ÒªÑ§»áµÄµÚÒ»¿ÎµÄ»°£¬ ÄÇÃ´ÎÒ¾õµÃ¼¼ÊõÈËÔ±ÒªÕæÕýÑ§»áµÄµÚ¶þ¿Î£¬²»ÊÇ¼¼Êõ£¬¶øÊÇÒµÎñ¡¢½»Á÷ÓëÐ­×÷£¬Ñ§»á¹ØÐÄÆäËû¹¤×÷»ï°éµÄ¹¤×÷Çé¿öºÍ½øÕ¹...</p>
-      <a title="/" href="/" target="_blank" class="readmore">ÔÄ¶ÁÈ«ÎÄ>></a>
-    </ul>
-    <p class="dateview"><span>2013-11-04</span><span>×÷Õß£ºÑîÇà</span><span>¸öÈË²©¿Í£º[<a href="/news/life/">³ÌÐòÈËÉú</a>]</span></p>
-    <h3>³ÌÐòÔ±Çë·ÅÏÂÄãµÄ¼¼ÊõÇé½Ú£¬ÓëÄãµÄÍ¬°éÒ»Æð½ø²½</h3>
-    <figure><img src="images/001.png"></figure>
-    <ul>
-      <p>Èç¹ûËµÕÆÎÕÒ»ÃÅÀµÒÔÉú¼ÆµÄ¼¼ÊõÊÇ¼¼ÊõÈËÔ±ÒªÑ§»áµÄµÚÒ»¿ÎµÄ»°£¬ ÄÇÃ´ÎÒ¾õµÃ¼¼ÊõÈËÔ±ÒªÕæÕýÑ§»áµÄµÚ¶þ¿Î£¬²»ÊÇ¼¼Êõ£¬¶øÊÇÒµÎñ¡¢½»Á÷ÓëÐ­×÷£¬Ñ§»á¹ØÐÄÆäËû¹¤×÷»ï°éµÄ¹¤×÷Çé¿öºÍ½øÕ¹...</p>
-      <a title="/" href="/" target="_blank" class="readmore">ÔÄ¶ÁÈ«ÎÄ>></a>
-    </ul>
-    <p class="dateview"><span>2013-11-04</span><span>×÷Õß£ºÑîÇà</span><span>¸öÈË²©¿Í£º[<a href="/news/life/">³ÌÐòÈËÉú</a>]</span></p>
-  </div>
-  <aside class="right">
+<aside class="right">
     <div class="weather"><iframe width="250" scrolling="no" height="60" frameborder="0" allowtransparency="true" src="http://i.tianqi.com/index.php?c=code&id=12&icon=1&num=1"></iframe></div>
-    <div class="news">
-    <h3>
-      <p>×îÐÂ<span>ÎÄÕÂ</span></p>
-    </h3>
-    <ul class="rank">
-      <li><a href="/" title="Column ÈýÀ¸²¼¾Ö ¸öÈËÍøÕ¾Ä£°å" target="_blank">Column ÈýÀ¸²¼¾Ö ¸öÈËÍøÕ¾Ä£°å</a></li>
-      <li><a href="/" title="with love for you ¸öÈËÍøÕ¾Ä£°å" target="_blank">with love for you ¸öÈËÍøÕ¾Ä£°å</a></li>
-      <li><a href="/" title="Ãâ·ÑÊÕÂ¼ÍøÕ¾ËÑË÷ÒýÇæµÇÂ¼¿Ú´óÈ«" target="_blank">Ãâ·ÑÊÕÂ¼ÍøÕ¾ËÑË÷ÒýÇæµÇÂ¼¿Ú´óÈ«</a></li>
-      <li><a href="/" title="×öÍøÕ¾µ½µ×ÐèÒªÊ²Ã´?" target="_blank">×öÍøÕ¾µ½µ×ÐèÒªÊ²Ã´?</a></li>
-      <li><a href="/" title="ÆóÒµ×öÍøÕ¾¾ßÌåÁ÷³Ì²½Öè" target="_blank">ÆóÒµ×öÍøÕ¾¾ßÌåÁ÷³Ì²½Öè</a></li>
-      <li><a href="/" title="½¨Õ¾Á÷³ÌÆª¡ª¡ª½ÌÄãÈçºÎ¿ìËÙÑ§»á×öÍøÕ¾" target="_blank">½¨Õ¾Á÷³ÌÆª¡ª¡ª½ÌÄãÈçºÎ¿ìËÙÑ§»á×öÍøÕ¾</a></li>
-      <li><a href="/" title="box-shadow ÒõÓ°ÓÒÏÂ½ÅÕÛ±ßÐ§¹û" target="_blank">box-shadow ÒõÓ°ÓÒÏÂ½ÅÕÛ±ßÐ§¹û</a></li>
-      <li><a href="/" title="´òÀ×Ê±ÊÒÄÚ¡¢»§ÍâÓ¦¸ÃÐèÒª×¢ÒâÊ²Ã´" target="_blank">´òÀ×Ê±ÊÒÄÚ¡¢»§ÍâÓ¦¸ÃÐèÒª×¢ÒâÊ²Ã´</a></li>
-    </ul>
-    <h3 class="ph">
-      <p>µã»÷<span>ÅÅÐÐ</span></p>
-    </h3>
-    <ul class="paih">
-      <li><a href="/" title="Column ÈýÀ¸²¼¾Ö ¸öÈËÍøÕ¾Ä£°å" target="_blank">Column ÈýÀ¸²¼¾Ö ¸öÈËÍøÕ¾Ä£°å</a></li>
-      <li><a href="/" title="withlove for you ¸öÈËÍøÕ¾Ä£°å" target="_blank">with love for you ¸öÈËÍøÕ¾Ä£°å</a></li>
-      <li><a href="/" title="Ãâ·ÑÊÕÂ¼ÍøÕ¾ËÑË÷ÒýÇæµÇÂ¼¿Ú´óÈ«" target="_blank">Ãâ·ÑÊÕÂ¼ÍøÕ¾ËÑË÷ÒýÇæµÇÂ¼¿Ú´óÈ«</a></li>
-      <li><a href="/" title="×öÍøÕ¾µ½µ×ÐèÒªÊ²Ã´?" target="_blank">×öÍøÕ¾µ½µ×ÐèÒªÊ²Ã´?</a></li>
-      <li><a href="/" title="ÆóÒµ×öÍøÕ¾¾ßÌåÁ÷³Ì²½Öè" target="_blank">ÆóÒµ×öÍøÕ¾¾ßÌåÁ÷³Ì²½Öè</a></li>
-    </ul>
-    <h3 class="links">
-      <p>ÓÑÇé<span>Á´½Ó</span></p>
-    </h3>
-    <ul class="website">
-      <li><a href="/">¸öÈË²©¿Í</a></li>
-      <li><a href="/">Ð»ÔóÎÄ¸öÈË²©¿Í</a></li>
-      <li><a href="/">3DST¼¼ÊõÍø</a></li>
-      <li><a href="/">Ë¼ºâÍøÂç</a></li>
-    </ul> 
-    </div>  
-    <!-- Baidu Button BEGIN -->
-    <div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare"><a class="bds_tsina"></a><a class="bds_qzone"></a><a class="bds_tqq"></a><a class="bds_renren"></a><span class="bds_more"></span><a class="shareCount"></a></div>
-    <script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=6574585" ></script> 
-    <script type="text/javascript" id="bdshell_js"></script> 
-    <script type="text/javascript">
-document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
-</script> 
-    <!-- Baidu Button END -->   
-    <a href="/" class="weixin"> </a></aside>
-</article>
-<footer>
-  <p>Design by DanceSmile <a href="http://www.miitbeian.gov.cn/" target="_blank">ÊñICP±¸11002373ºÅ-1</a> <a href="/">ÍøÕ¾Í³¼Æ</a></p>
-</footer>
-<script src="js/silder.js"></script>
-</body>
-</html>
+        <div class="news">
+            <h3><p><span>æœ€æ–°æ–‡ç« </span></p></h3>
+            <ul class="rank">
+                <li><a href="/" title="Column ä¸‰æ å¸ƒå±€ ä¸ªäººç½‘ç«™æ¨¡æ¿" target="_blank">Column ä¸‰æ å¸ƒå±€ ä¸ªäººç½‘ç«™æ¨¡æ¿</a></li>
+                <li><a href="/" title="with love for you ä¸ªäººç½‘ç«™æ¨¡æ¿" target="_blank">with love for you ä¸ªäººç½‘ç«™æ¨¡æ¿</a></li>
+                <li><a href="/" title="å…è´¹æ”¶å½•ç½‘ç«™æœç´¢å¼•æ“Žç™»å½•å£å¤§å…¨" target="_blank">å…è´¹æ”¶å½•ç½‘ç«™æœç´¢å¼•æ“Žç™»å½•å£å¤§å…¨</a></li>
+                <li><a href="/" title="åšç½‘ç«™åˆ°åº•éœ€è¦ä»€ä¹ˆ?" target="_blank">åšç½‘ç«™åˆ°åº•éœ€è¦ä»€ä¹ˆ?</a></li>
+                <li><a href="/" title="ä¼ä¸šåšç½‘ç«™å…·ä½“æµç¨‹æ­¥éª¤" target="_blank">ä¼ä¸šåšç½‘ç«™å…·ä½“æµç¨‹æ­¥éª¤</a></li>
+                <li><a href="/" title="å‘ç”Ÿåˆ†é…ç‚¹å¡ç‚¹èˆ’æœå¡æ‹‰ç‹¬å®ˆç©ºæˆ¿ï¼›é¢†å¯¼ï¼›äº†å‘è¾¾ååˆ†äº†ï¼›çˆ±ä¸Šï¼›äº†" target="_blank">å‘ç”Ÿåˆ†é…ç‚¹å¡ç‚¹èˆ’æœå¡æ‹‰ç‹¬å®ˆç©ºæˆ¿ï¼›é¢†å¯¼ï¼›äº†å‘è¾¾ååˆ†äº†ï¼›çˆ±ä¸Šï¼›äº†</a></li>
+                <li><a href="/" title="box-shadow é£Žæ™¯çš„ä¸–ç•Œæ³•å¾‹ã€€" target="_blank">box-shadow é£Žæ™¯çš„ä¸–ç•Œæ³•å¾‹</a></li>
+                <li><a href="/" title="æ‰“é›·æ—¶å®¤å†…ã€æˆ·å¤–åº”è¯¥éœ€è¦æ³¨æ„ä»€ä¹ˆ" target="_blank">æ‰“é›·æ—¶å®¤å†…ã€æˆ·å¤–åº”è¯¥éœ€è¦æ³¨æ„ä»€ä¹ˆ</a></li>
+            </ul>
+            <h3 class="ph"><p><span>ç‚¹å‡»æŽ’è¡Œ</span></p></h3>
+            <ul class="paih">
+                <li><a href="/" title="Column ä¸‰æ å¸ƒå±€ ä¸ªäººç½‘ç«™æ¨¡æ¿" target="_blank">Column ä¸‰æ å¸ƒå±€ ä¸ªäººç½‘ç«™æ¨¡æ¿</a></li>
+                <li><a href="/" title="with love for you ä¸ªäººç½‘ç«™æ¨¡æ¿" target="_blank">with love for you ä¸ªäººç½‘ç«™æ¨¡æ¿</a></li>
+                <li><a href="/" title="å…è´¹æ”¶å½•ç½‘ç«™æœç´¢å¼•æ“Žç™»å½•å£å¤§å…¨" target="_blank">å…è´¹æ”¶å½•ç½‘ç«™æœç´¢å¼•æ“Žç™»å½•å£å¤§å…¨</a></li>
+                <li><a href="/" title="åšç½‘ç«™åˆ°åº•éœ€è¦ä»€ä¹ˆ?" target="_blank">åšç½‘ç«™åˆ°åº•éœ€è¦ä»€ä¹ˆ?</a></li>
+                <li><a href="/" title="ä¼ä¸šåšç½‘ç«™å…·ä½“æµç¨‹æ­¥éª¤" target="_blank">ä¼ä¸šåšç½‘ç«™å…·ä½“æµç¨‹æ­¥éª¤</a></li>
+            </ul>
+            <h3 class="links"><p><span>å‹æƒ…é“¾æŽ¥</span></p></h3>
+            <ul class="website">
+                <li><a href="/">ä¸ªäººåšå®¢</a></li>
+                <li><a href="/">è°¢æ³½æ–‡ä¸ªäººåšå®¢</a></li>
+                <li><a href="/">3DSTæŠ€æœ¯ç½‘</a></li>
+                <li><a href="/">æ€è¡¡ç½‘ç»œ</a></li>
+            </ul>
+        </div>
+        <!-- Baidu Button BEGIN -->
+        <div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare">
+            <a class="bds_tsina"></a>
+            <a class="bds_qzone"></a>
+            <a class="bds_tqq"></a>
+            <a class="bds_renren"></a>
+            <span class="bds_more"></span>
+            <a class="shareCount"></a>
+        </div>
+        <script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=6574585" ></script>
+        <script type="text/javascript" id="bdshell_js"></script>
+        <script type="text/javascript">
+            document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+        </script>
+</aside>
+@endsection
