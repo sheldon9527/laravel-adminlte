@@ -19,13 +19,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <body class="hold-transition login-page">
         <div class="login-box">
             <div class="login-logo">
-                <a href="../../index2.html"><b>DEFARA</b> - ADMIN</a>
+                <a href="../../index2.html"><b>SHELDON'S BLOG</b> - ADMIN</a>
             </div>
             <div class="login-box-body">
                 <p class="login-box-msg">Sign in to start your session</p>
                 <form action="{{ route('admin.auth.login.post') }}" method="POST">
+                    {{ csrf_field() }}
+                    @include('admin.common.errors', ['errors'=>$errors])
                     <div class="form-group has-feedback">
-                        <input type="text" name="username" class="form-control" placeholder="Username" value="{{old('username')}}" required>
+                        <input type="text" name="email" class="form-control" placeholder="Email" value="{{old('username')}}" required>
                         <span class="glyphicon glyphicon-user form-control-feedback"></span>
                     </div>
                     <div class="form-group has-feedback">
