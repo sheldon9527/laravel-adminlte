@@ -19,18 +19,18 @@
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <img src="{{url('/images/admin-avatar.jpg')}}" class="user-image" alt="User Image" />
-                        <span class="hidden-xs">Admin User</span>
+                        <span class="hidden-xs">{{app('admin')->user()->email}}</span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header">
                             <img src="{{url('/images/admin-avatar.jpg')}}" class="img-circle" alt="User Image" />
-                            <p>Admin User</p>
+                            <p>{{app('admin')->user()->email}}</p>
                         </li>
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <div class="pull-right">
-                                <a href="" class="btn btn-default btn-flat">Logout</a>
+                                <a href="{{ route('admin.auth.logout') }}" class="btn btn-default btn-flat">Logout</a>
                             </div>
                         </li>
                     </ul>

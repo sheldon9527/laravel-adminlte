@@ -48,6 +48,12 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'manager'], function () {
 
     Route::group(['middleware' => ['admin.auth']], function () {
 
+        # 登出
+        Route::get('logout', [
+            'as' => 'admin.auth.logout',
+            'uses' => 'AuthController@logout',
+        ]);
+
         Route::get('/', function () {
             return redirect(route('admin.dashboard'));
         });
