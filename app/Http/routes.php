@@ -30,11 +30,33 @@ Route::group(['namespace' => 'Front'], function () {
     ]);
 });
 
+
+
 Route::group(['namespace' => 'Admin', 'prefix' => 'manager'], function () {
 
     // 登录页面
-    Route::get('/index', [
-        'as' => 'admin.index',
-        'uses' => 'HomeController@index',
+    Route::get('auth/login', [
+        'as' => 'admin.auth.login.get',
+        'uses' => 'AuthController@getLogin',
     ]);
+
+    // 登录提交
+    Route::post('auth/login', [
+        'as' => 'admin.auth.login.post',
+        'uses' => 'AuthController@postLogin',
+    ]);
+
+    Route::group(['middleware' => ['admin.auth']], function () {
+
+        Route::get('/', function () {
+            return redirect(route('admin.dashboard'));
+        });
+
+        // Dashboard
+        Route::get('dashboard', [
+            'as' => 'admin.dashboard',
+            'uses' => 'DashboardController@dashboard',
+        ]);
+    });
+
 });

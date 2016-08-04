@@ -15,4 +15,13 @@ class BaseController extends Controller
     {
         $this->request = $request;
     }
+
+    public function user()
+    {
+        if (!$this->user) {
+            $this->user = app('admin')->user();
+        }
+
+        return $this->user;
+    }
 }

@@ -156,6 +156,9 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        // 运营端后台
+        App\Providers\AdminServiceProvider::class,
+
     ],
 
     /*

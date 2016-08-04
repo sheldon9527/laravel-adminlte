@@ -39,6 +39,7 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-
+        'admin.auth' => \App\Http\Middleware\AdminAuthenticate::class,
+        'csrf' => \App\Http\Middleware\VerifyCsrfToken::class
     ];
 }
