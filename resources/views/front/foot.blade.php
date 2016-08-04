@@ -4,10 +4,10 @@
 </a>
 <script>
 var BLOG_SHARE = {
-    title: "Yusen's Blog",
+    title: "Sheldon's Blog",
     pic: "/images/logo.jpg",
     summary: document.getElementsByName('summary')[0].content,
-    url: "http://imys.net/index.html"
+    url: ""
 };
 </script>
 <div class="global-share" id="global-share">

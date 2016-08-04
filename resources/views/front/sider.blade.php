@@ -4,32 +4,32 @@
 		<a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off"><i class="icon icon-lg icon-close"></i></a>
 		<div class="brand-wrap">
 			<div class="brand">
-				<a href="http://www.imys.net/" class="avatar"><img src="/front/images/logo.jpg"></a>
+				<a href="" class="avatar"><img src="/front/images/logo.jpg"></a>
 				<hgroup class="introduce">
-					<h5 class="nickname">王昱森</h5>
-					<a href="mailto:634206017@qq.com" title="634206017@qq.com" class="mail">634206017@qq.com</a>
+					<h5 class="nickname">易晓东</h5>
+					<a href="mailto:985829902@qq.com" title="634206017@qq.com" class="mail">985829902@qq.com</a>
 				</hgroup>
 			</div>
 		</div>
 		<ul class="nav flex-col">
 			<li class="waves-block waves-effect active">
-				<a href="http://www.imys.net/"><i class="icon icon-lg icon-home"></i>Home</a>
+				<a href=""><i class="icon icon-lg icon-home"></i>Home</a>
 			</li>
 
 			<li class="waves-block waves-effect">
-				<a href="http://www.imys.net/archives"><i class="icon icon-lg icon-archives"></i>Archives</a>
+				<a href=""><i class="icon icon-lg icon-archives"></i>Archives</a>
 			</li>
 
 			<li class="waves-block waves-effect">
-				<a href="http://www.imys.net/tags"><i class="icon icon-lg icon-tags"></i>Tags</a>
+				<a href=""><i class="icon icon-lg icon-tags"></i>Tags</a>
 			</li>
 
 			<li class="waves-block waves-effect">
-				<a href="https://github.com/yscoder" target="_blank"><i class="icon icon-lg icon-github"></i>Github</a>
+				<a href="https://github.com/sheldon9527" target="_blank"><i class="icon icon-lg icon-github"></i>Github</a>
 			</li>
 
 			<li class="waves-block waves-effect">
-				<a href="http://www.weibo.com/ysweb" target="_blank"><i class="icon icon-lg icon-weibo"></i>Weibo</a>
+				<a href="http://weibo.com/2940709051/profile" target="_blank"><i class="icon icon-lg icon-weibo"></i>Weibo</a>
 			</li>
 		</ul>
 
