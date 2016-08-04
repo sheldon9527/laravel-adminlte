@@ -53,16 +53,21 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'manager'], function () {
             'as' => 'admin.auth.logout',
             'uses' => 'AuthController@logout',
         ]);
-
         Route::get('/', function () {
             return redirect(route('admin.dashboard'));
         });
-
         // Dashboard
         Route::get('dashboard', [
             'as' => 'admin.dashboard',
             'uses' => 'DashboardController@dashboard',
         ]);
+
+        //文章
+        Route::get('articles/create', [
+            'as' => 'admin.articles.create',
+            'uses' => 'ArticleController@create',
+        ]);
+
     });
 
 });

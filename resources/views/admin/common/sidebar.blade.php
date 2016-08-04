@@ -31,7 +31,7 @@
                 <a href="#">
                     <i class="fa fa-files-o"></i><span>文章管理</span><span class="label label-primary pull-right"></span></a>
                     <ul class="treeview-menu">
-                        <li><a href="#"><i class="fa fa-circle-o"></i>添加文章</a></li>
+                        <li><a href="{{route('admin.articles.create')}}"><i class="fa fa-circle-o"></i>添加文章</a></li>
                         <li><a href="#"><i class="fa fa-circle-o"></i>文章列表</a></li>
                     </ul>
                 </li>
