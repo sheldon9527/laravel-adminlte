@@ -1,22 +1,21 @@
 <head>
-<meta charset="gb2312">
-<title>易晓东的博客</title>
-<meta name="keywords" content="易晓东的博客,易晓东" />
-<meta name="description" content="晓东的博客,易晓东" />
-<link href="/front/css/base.css" rel="stylesheet">
-<!-- <link href="/front/css/about.css" rel="stylesheet">
-<link href="/front/css/book.css" rel="stylesheet">
-<link href="/front/css/case.css" rel="stylesheet"> -->
-<link href="/front/css/index.css" rel="stylesheet">
-<!-- <link href="/front/css/learn.css" rel="stylesheet"> -->
-<!-- <link href="/front/css/mood.css" rel="stylesheet"> -->
-<!-- <link href="/front/css/new.css" rel="stylesheet">
-<link href="/front/css/share.css" rel="stylesheet">
-<link href="/front/css/style.css" rel="stylesheet">
-<link href="/front/css/template.css" rel="stylesheet"> -->
-<script src="/front/js/silder.js"></script>
-<script src="/front/js/modernizr.js"></script>
-<!--[if lt IE 9]>
-<script src="js/modernizr.js"></script>
-<![endif]-->
+	<title>Yusen's Blog | 折腾不在乎成功与否。</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="theme-color" content="#3F51B5">
+	<meta name="google-site-verification" content="rlxpN--EBnMOLJnY1efTuwShQId3YX7A6RWkQEr0y9c">
+	<meta name="keywords" content="王昱森, 前端开发, 个人博客, WEB前端, 前端博客, 郑州前端, html, css, js, hexo">
+	<meta name="description" content="王昱森的博客。折腾不在乎成功与否。无所谓做什么，只要是当前最感兴趣的事！随心、随性、随缘！">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Yusen&#39;s Blog">
+	<meta property="og:url" content="http://imys.net/index.html">
+	<meta property="og:site_name" content="Yusen&#39;s Blog">
+	<meta property="og:description" content="王昱森的博客。折腾不在乎成功与否。无所谓做什么，只要是当前最感兴趣的事！随心、随性、随缘！">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Yusen&#39;s Blog">
+	<meta name="summary" content="王昱森的博客。折腾不在乎成功与否。无所谓做什么，只要是当前最感兴趣的事！随心、随性、随缘！">
+	<meta name="twitter:description" content="王昱森的博客。折腾不在乎成功与否。无所谓做什么，只要是当前最感兴趣的事！随心、随性、随缘！">
+	<link rel="alternative" href="http://www.imys.net/atom.xml" title="Yusen&#39;s Blog" type="application/atom+xml">
+	<link rel="shortcut icon" href="http://www.imys.net/favicon.ico">
+	<link rel="stylesheet" href="/front/css/style.css">
 </head>

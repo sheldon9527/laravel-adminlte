@@ -1,11 +1,15 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
     @include('front.head')
     <body>
-        @include('front.header')
-            <article>
-                @yield('content')
-            </article>
-        @include('front.footer')
+        @include('front.sider')
+        <main id="main">
+            @include('front.header')
+            <div class="container body-wrap">
+            @yield('content')
+            </div>
+        </main>
+        @include('front.foot')
     </body>
+    @include('front.footer')
 </html>
