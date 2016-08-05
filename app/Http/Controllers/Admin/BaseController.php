@@ -9,13 +9,6 @@ class BaseController extends Controller
 {
     protected $user;
 
-    protected $request;
-
-    public function __construct(Request $request)
-    {
-        $this->request = $request;
-    }
-
     public function user()
     {
         if (!$this->user) {

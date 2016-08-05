@@ -9,38 +9,66 @@
                 <div class="box-body">
                     <form method="post" action="{{route('admin.articles.store')}}"class="form-horizontal" enctype="multipart/form-data">
                         @include('admin.common.errors')
-                        <div class="col-md-6">
+                        <div>
                             <div class="form-group">
-                                <label><span class="text-red">*</span>文章题目</label>
-                                <input type="text" name="title" value="" class="form-control" placeholder="文章题目" required="">
+                                <label><span class="text-red">*</span>标题</label>
+                                <input type="text" name="title" value="" class="form-control" placeholder="标题" required="">
                             </div>
 							<div class="form-group">
-								<label for=""><span class="text-red">*</span>文章简述</label>
-								<div>
-									<textarea class="form-control" rows="6" cols="40" name="description" placeholder="文章简述" required=""></textarea>
-								</div>
-							</div>
-							<div class="form-group">
-								<label for=""><span class="text-red">*</span>文章内容</label>
+								<label for=""><span class="text-red">*</span>内容</label>
 								<style>
   									#container{
 										width: auto;
-										min-height: 600px;
+										min-height: 300px;
 									}
 								</style>
 								<script id="container" name="content" type="text/plain">
-									这里写你的初始化内容
 								</script>
 							</div>
+                            <div class="form-group">
+                                <label for=""><span class="text-red">*</span>标签</label>
+                                <div>
+                                    <input type="text" name="tag" value="" class="form-control" placeholder="标签,多个标签用英文逗号隔开" required="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="">锚点</label>
+                                <div>
+                                    <input type="text" name="catalog" value="" class="form-control" placeholder="锚点,多个标签用英文逗号隔开">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for=""><span class="text-red">*</span>系统分类:</label>
+                                <select id="test_select" name="category_id" class="selectpicker">
+                                    <option value="0">请选择</option>
+                                    @foreach($categories as $catefory)
+                                    <option value="{{$catefory->id}}">{{$catefory->name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <div>
+                                    <label class="control-label"><span class="text-red">*</span>是否显示:</label>
+                                    <select name="status" class="selectpicker" data-width="auto">
+                                        <option value="active" selected="selected">激活</option>
+                                        <option value="inactive">未激活</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div>
+                                    <label class="control-label"><span class="text-red">*</span>是否置顶:</label>
+                                    <select name="is_front" class="selectpicker" data-width="auto">
+                                        <option value="0" selected="selected">否</option>
+                                        <option value="1">是</option>
+                                    </select>
+                                </div>
+                            </div>
 							<div class="form-group">
-								<label for=""><span class="text-red">*</span>标签</label>
 								<div>
-									<input type="text" name="tag" value="" class="form-control" placeholder="文章标签,多个标签用英文逗号隔开(,)" required="">
-								</div>
-							</div>
-							<div class="form-group">
-								<div>
-									<button class="btn btn-primary" type="submit">保存草稿</button>
+									<button class="btn btn-primary" type="submit">保存</button>
 								</div>
 							</div>
                         </div>
