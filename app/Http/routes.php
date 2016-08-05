@@ -30,8 +30,6 @@ Route::group(['namespace' => 'Front'], function () {
     ]);
 });
 
-
-
 Route::group(['namespace' => 'Admin', 'prefix' => 'manager'], function () {
 
     // 登录页面
@@ -66,6 +64,14 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'manager'], function () {
         Route::get('articles/create', [
             'as' => 'admin.articles.create',
             'uses' => 'ArticleController@create',
+        ]);
+        Route::post('articles', [
+            'as' => 'admin.articles.store',
+            'uses' => 'ArticleController@store',
+        ]);
+        Route::get('articles', [
+            'as' => 'admin.articles.index',
+            'uses' => 'ArticleController@index',
         ]);
 
     });
