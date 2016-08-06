@@ -4,6 +4,7 @@
     <div class="box box-primary">
         <div class="box-header">
             <h3 class="box-title">所有文章</h3>
+            <a href="{{route('admin.articles.create')}}" class="pull-right btn btn-primary" type="button">写文章</a>
         </div>
         <div class="box-body ">
             <div class="row">
@@ -16,6 +17,12 @@
                                     <label class="col-sm-2 control-label">标题</label>
                                     <div class="col-sm-8">
                                         <input type="text" class="form-control" placeholder="标题" name="title" value="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">标签</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" placeholder="标签" name="tag" value="">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -80,7 +87,7 @@
                                 <td><a href="{{route('admin.articles.show',$article->id)}}">{{$article->title}}</a></td>
                                 <td>
                                     @foreach($article->tags()->get() as $tag)
-                                    <button type="button" class="btn-primary">{{$tag->name}}</button>
+                                    <a href="{{route('admin.articles.index')}}?tag={{$tag->name}}"><button type="button" class="btn-primary">{{$tag->name}}</button></a>
                                     @endforeach
                                 </td>
                                 <td>

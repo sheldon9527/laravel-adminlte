@@ -89,7 +89,8 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'manager'], function () {
             'as' => 'admin.articles.update.status',
             'uses' => 'ArticleController@updateStatus',
         ]);
-        # 分类
+
+        //分类
         Route::get('categories', [
             'as' => 'admin.categories.index',
             'uses' => 'CategoryController@index',
@@ -106,6 +107,15 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'manager'], function () {
             'as' => 'admin.categories.destroy',
             'uses' => 'CategoryController@destroy',
         ]);
+
+        //tags
+
+        Route::get('tags', [
+            'as' => 'admin.tags.index',
+            'uses' => 'TagController@index',
+        ]);
+
+
     });
 
 });

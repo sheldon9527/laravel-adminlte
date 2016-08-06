@@ -5,6 +5,8 @@
         <div class="col-md-12">
             <div class="box box-primary">
                 <div class="box-header with-border">
+                    <h3 class="box-title">编辑文章</h3>
+                    <a href="{{route('admin.articles.show',$article->id)}}" class="pull-right btn btn-primary" type="button">返回</a>
                 </div>
                 <div class="box-body">
                     <form method="post" action="{{route('admin.articles.update',$article->id)}}"class="form-horizontal" enctype="multipart/form-data">

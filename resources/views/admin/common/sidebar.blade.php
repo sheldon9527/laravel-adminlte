@@ -26,7 +26,7 @@
                         <li><a href="{{route('admin.articles.index')}}"><i class="glyphicon glyphicon-book"></i>所有文章</a></li>
                         <li><a href="{{route('admin.articles.create')}}"><i class="glyphicon glyphicon-pencil"></i>写文章</a></li>
                         <li><a href="{{route('admin.categories.index')}}"><i class="glyphicon glyphicon-bookmark"></i>分类目录</a></li>
-                        <li><a href=""><i class="glyphicon glyphicon-tags"></i>标签</a></li>
+                        <li><a href="{{route('admin.tags.index')}}"><i class="glyphicon glyphicon-tags"></i>标签</a></li>
                     </ul>
                 </li>
                 <li class="treeview">

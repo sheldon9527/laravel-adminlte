@@ -5,6 +5,8 @@
         <div class="col-md-12">
             <div class="box box-primary">
                 <div class="box-header with-border">
+                    <h3 class="box-title">文章详情</h3>
+                    <a href="{{route('admin.articles.index')}}" class="pull-right btn btn-primary" type="button">返回</a>
                 </div>
                 <div class="box-body">
                     <div>
@@ -47,6 +49,9 @@
                                 <label class="control-label">是否置顶:</label>
                                 <input type="text" value="@if($article->is_front == 1) 已置顶@else 未置顶 @endif" class="form-control" readonly>
                             </div>
+                        </div>
+                        <div class="form-group">
+                            <a href="{{route('admin.articles.edit',$article->id)}}" class="pull-left btn btn-primary" type="button">编辑</a>
                         </div>
                     </div>
                 </div>

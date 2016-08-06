@@ -17,7 +17,7 @@ class ArticleController extends BaseController
         $articles = $user->articles();
         $categories = Category::all();
 
-        $searchColumns = ['title', 'category_id', 'status'];
+        $searchColumns = ['title', 'category_id', 'status', 'tag'];
 
         if ($title = $request->get('title')) {
             $articles->where('title', 'like', '%'.$title.'%');
@@ -29,6 +29,12 @@ class ArticleController extends BaseController
 
         if ($status = $request->get('status')) {
             $articles->where('status', $status);
+        }
+
+        if ($tag = $request->get('tag')) {
+            $articles->whereHas('tags', function ($query) use($tag) {
+                $query->where('name', 'like', $tag.'%');
+            });
         }
 
         $articles = $articles->orderBy('id', 'desc')->paginate();
