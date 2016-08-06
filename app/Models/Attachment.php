@@ -36,6 +36,7 @@ class Attachment extends BaseModel
         }
 
         $file = \Storage::disk('public')->get($filepath);
+
         try {
             $filesystem->put($filepath, $file);
         } catch (Exception $e) {

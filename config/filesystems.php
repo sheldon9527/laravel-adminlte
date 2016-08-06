@@ -50,8 +50,7 @@ return [
 
         'public' => [
             'driver' => 'local',
-            'root' => storage_path('app/public'),
-            'visibility' => 'public',
+            'root'   => public_path(),
         ],
         'qiniu' => [
             'driver'  => 'qiniu',
