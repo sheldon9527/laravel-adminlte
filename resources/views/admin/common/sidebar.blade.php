@@ -19,11 +19,14 @@
                 </div>
             </form>
             <ul class="sidebar-menu">
-                <li class="header">管理</li>
-                <li class="active treeview"><a href="#"><i class="fa fa-dashboard"></i> <span>文章管理</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <li class="active treeview"><a href="{{route('admin.dashboard')}}"><i class="fa fa-dashboard"></i> <span>仪表盘</span> </a>
+                </li>
+                <li class="active treeview"><a href="#"><i class="glyphicon glyphicon-pencil"></i> <span>文章</span> <i class="fa fa-angle-left pull-right"></i></a>
                     <ul class="treeview-menu">
-                        <li><a href="{{route('admin.articles.create')}}"><i class="fa fa-circle-o"></i>添加文章</a></li>
-                        <li><a href="{{route('admin.articles.index')}}"><i class="fa fa-circle-o"></i>文章列表</a></li>
+                        <li><a href="{{route('admin.articles.index')}}"><i class="glyphicon glyphicon-book"></i>所有文章</a></li>
+                        <li><a href="{{route('admin.articles.create')}}"><i class="glyphicon glyphicon-pencil"></i>写文章</a></li>
+                        <li><a href="{{route('admin.categories.index')}}"><i class="glyphicon glyphicon-bookmark"></i>分类目录</a></li>
+                        <li><a href=""><i class="glyphicon glyphicon-tags"></i>标签</a></li>
                     </ul>
                 </li>
                 <li class="treeview">

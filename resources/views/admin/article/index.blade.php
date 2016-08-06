@@ -3,7 +3,7 @@
 @section('content')
     <div class="box box-primary">
         <div class="box-header">
-            <h3 class="box-title">文章列表</h3>
+            <h3 class="box-title">所有文章</h3>
         </div>
         <div class="box-body ">
             <div class="row">
@@ -76,7 +76,7 @@
                         @foreach($articles as $article)
                             <tr role="row">
                                 <td>{{$article->id}}</td>
-                                <td>{{$article->category->name}}</td>
+                                <td>@if($article->category){{$article->category->name}}@else <span class="text-red">未分类</span>@endif</td>
                                 <td><a href="{{route('admin.articles.show',$article->id)}}">{{$article->title}}</a></td>
                                 <td>
                                     @foreach($article->tags()->get() as $tag)
@@ -100,7 +100,7 @@
                                 <td>{{$article->created_at}}</td>
                                 <td>
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="true">操作
+                                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="true">操作
                                         <span class="fa fa-caret-down"></span></button>
                                         <ul class="dropdown-menu slim-menu">
                                             <li><a href="{{route('admin.articles.edit',$article->id)}}">编辑</a></li>

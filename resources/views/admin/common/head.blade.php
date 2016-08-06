@@ -22,10 +22,8 @@
     <!-- Dropzone ***-->
     <link href='/css/dropzone.css' rel="stylesheet" />
 
-    {{-- rich text --}}
-    <link href="/bower/google-code-prettify/src/prettify.css" rel="stylesheet" />
-    <link href='/bower/bootstrap-wysiwyg/css/style.css' rel="stylesheet" />
     <link href='/css/admin.css' rel="stylesheet" />
+
     {{-- requrejs --}}
     <script src="/bower/requirejs/require.js"></script>
     <script src="/js/admin.js"></script>

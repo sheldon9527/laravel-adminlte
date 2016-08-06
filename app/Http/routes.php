@@ -89,6 +89,23 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'manager'], function () {
             'as' => 'admin.articles.update.status',
             'uses' => 'ArticleController@updateStatus',
         ]);
+        # 分类
+        Route::get('categories', [
+            'as' => 'admin.categories.index',
+            'uses' => 'CategoryController@index',
+        ]);
+        Route::post('categories', [
+            'as' => 'admin.categories.store',
+            'uses' => 'CategoryController@store',
+        ]);
+        Route::put('categories/{id}', [
+            'as' => 'admin.categories.update',
+            'uses' => 'CategoryController@update',
+        ]);
+        Route::delete('categories/{id}', [
+            'as' => 'admin.categories.destroy',
+            'uses' => 'CategoryController@destroy',
+        ]);
     });
 
 });

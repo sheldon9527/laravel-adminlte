@@ -8,4 +8,8 @@ class Admin extends BaseModel
     {
         return $this->hasMany('App\Models\Article');
     }
+    public function categories()
+    {
+        return $this->hasMany('App\Models\Category');
+    }
 }

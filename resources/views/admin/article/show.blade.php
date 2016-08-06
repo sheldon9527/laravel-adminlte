@@ -32,7 +32,7 @@
                         </div>
                         <div class="form-group">
                             <label for="">系统分类:</label>
-                            <input type="text" value="{{$article->category->name}}" class="form-control" readonly>
+                            <input type="text" value="@if($article->category){{$article->category->name}}@else 未分类@endif" class="form-control" readonly>
                         </div>
 
                         <div class="form-group">

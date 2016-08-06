@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Admin\Auth;
+namespace App\Http\Requests\Admin\Category;
 
 use App\Http\Requests\Admin\Request;
 
@@ -9,16 +9,14 @@ class StoreRequest extends Request
     public function rules()
     {
         return [
-            'email' => 'required',
-            'password' => 'required',
+            'name' => 'required|string',
         ];
     }
 
     public function messages()
     {
         return [
-            'email.required' => '请填写邮箱',
-            'password.required' => '请填写密码',
+            'name.required' => '请填写分类名称',
         ];
     }
 }
