@@ -53,13 +53,29 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'manager'], function () {
         });
 
         //基本信息
-        Route::get('admin/{id}/profile', [
+        Route::get('profile', [
             'as' => 'admin.users.edit',
             'uses' => 'AdminController@edit',
         ]);
-        Route::put('admin/{id}', [
+        Route::put('profile', [
             'as' => 'admin.users.update',
             'uses' => 'AdminController@update',
+        ]);
+        Route::get('email', [
+            'as' => 'admin.users.email.edit',
+            'uses' => 'AdminController@editEmail',
+        ]);
+        Route::put('email', [
+            'as' => 'admin.users.email.update',
+            'uses' => 'AdminController@updateEmail',
+        ]);
+        Route::get('password', [
+            'as' => 'admin.users.password.edit',
+            'uses' => 'AdminController@editPassword',
+        ]);
+        Route::put('password', [
+            'as' => 'admin.users.password.update',
+            'uses' => 'AdminController@updatePassword',
         ]);
         // Dashboard
         Route::get('dashboard', [

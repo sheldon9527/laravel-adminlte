@@ -57,9 +57,9 @@
                     <a href="#"><i class="fa fa-laptop"></i><span>设置</span><i class="fa fa-angle-left pull-right"></i></a>
                     <ul class="treeview-menu">
                         <li><a href="#"><i class="fa fa-circle-o"></i>博客链接<small class="label pull-right bg-green">must</small></a></li>
-                        <li><a href="{{route('admin.users.edit',app('admin')->user()->id)}}"><i class="fa fa-circle-o"></i>基本信息</a></li>
-                        <li><a href="#"><i class="fa fa-circle-o"></i>修改邮箱</a></li>
-                        <li><a href="#"><i class="fa fa-circle-o"></i>修改密码</a></li>
+                        <li><a href="{{route('admin.users.edit')}}"><i class="fa fa-circle-o"></i>基本信息</a></li>
+                        <li><a href="{{route('admin.users.email.edit')}}"><i class="fa fa-circle-o"></i>修改邮箱</a></li>
+                        <li><a href="{{route('admin.users.password.edit')}}"><i class="fa fa-circle-o"></i>修改密码</a></li>
                         <li><a href="#"><i class="fa fa-circle-o"></i>社交账号</a></li>
                     </ul>
                 </li>

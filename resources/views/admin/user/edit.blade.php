@@ -13,7 +13,7 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="ibox float-e-margins">
-                                <form method="post" action="{{route('admin.users.update',$user->id)}}" id="form" enctype="multipart/form-data" class="form-horizontal">
+                                <form method="post" action="{{route('admin.users.update')}}" id="form" enctype="multipart/form-data" class="form-horizontal">
                                     @include('admin.common.errors')
                                     <input type="hidden" name="_method" value="PUT">
                                     <div class="form-group">
