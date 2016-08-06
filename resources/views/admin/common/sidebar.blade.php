@@ -21,7 +21,9 @@
             <ul class="sidebar-menu">
                 <li class="active treeview"><a href="{{route('admin.dashboard')}}"><i class="fa fa-dashboard"></i> <span>仪表盘</span> </a>
                 </li>
-                <li class="active treeview"><a href="#"><i class="glyphicon glyphicon-pencil"></i> <span>文章</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <li class="{{
+                        \Route::is('admin.articles.*', 'admin.categories.*', 'admin.tags.*') ? 'active' : null
+                    }} treeview"><a href="#"><i class="glyphicon glyphicon-pencil"></i> <span>文章</span> <i class="fa fa-angle-left pull-right"></i></a>
                     <ul class="treeview-menu">
                         <li><a href="{{route('admin.articles.index')}}"><i class="glyphicon glyphicon-book"></i>所有文章</a></li>
                         <li><a href="{{route('admin.articles.create')}}"><i class="glyphicon glyphicon-pencil"></i>写文章</a></li>
@@ -49,10 +51,15 @@
                         <li><a href="#"><i class="fa fa-circle-o"></i>碎言碎语</a></li>
                     </ul>
                 </li>
-                <li class="treeview">
+                <li class="{{
+                        \Route::is('admin.users.*') ? 'active' : null
+                    }} treeview">
                     <a href="#"><i class="fa fa-laptop"></i><span>设置</span><i class="fa fa-angle-left pull-right"></i></a>
                     <ul class="treeview-menu">
-                        <li><a href="#"><i class="fa fa-circle-o"></i>基本信息</a></li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i>博客链接<small class="label pull-right bg-green">must</small></a></li>
+                        <li><a href="{{route('admin.users.edit',app('admin')->user()->id)}}"><i class="fa fa-circle-o"></i>基本信息</a></li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i>修改邮箱</a></li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i>修改密码</a></li>
                         <li><a href="#"><i class="fa fa-circle-o"></i>社交账号</a></li>
                     </ul>
                 </li>

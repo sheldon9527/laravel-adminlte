@@ -15,5 +15,5 @@ config/test
 .env
 *.swp
 .swo
-
+/public/assets
 apidoc.json

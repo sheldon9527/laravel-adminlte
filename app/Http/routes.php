@@ -51,6 +51,16 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'manager'], function () {
         Route::get('/', function () {
             return redirect(route('admin.dashboard'));
         });
+
+        //基本信息
+        Route::get('admin/{id}/profile', [
+            'as' => 'admin.users.edit',
+            'uses' => 'AdminController@edit',
+        ]);
+        Route::put('admin/{id}', [
+            'as' => 'admin.users.update',
+            'uses' => 'AdminController@update',
+        ]);
         // Dashboard
         Route::get('dashboard', [
             'as' => 'admin.dashboard',
@@ -109,7 +119,6 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'manager'], function () {
         ]);
 
         //tags
-
         Route::get('tags', [
             'as' => 'admin.tags.index',
             'uses' => 'TagController@index',
