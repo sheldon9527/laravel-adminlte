@@ -23,8 +23,18 @@
                                     <div class="col-sm-8">
                                         <select name="status" class="selectpicker" data-width="auto">
                                             <option value="">--</option>
-                                            <option value="active" {{\Request::input('status') == 'active' ? 'selected' : ''}}>激活</option>
-                                            <option value="inactive" {{\Request::input('status') == 'inactive' ? 'selected' : ''}}>未激活</option>
+                                            <option value="active">显示</option>
+                                            <option value="inactive">不显示</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">置顶</label>
+                                    <div class="col-sm-8">
+                                        <select name="is_front" class="selectpicker" data-width="auto">
+                                            <option value="">--</option>
+                                            <option value="1">置顶</option>
+                                            <option value="0">不置顶</option>
                                         </select>
                                     </div>
                                 </div>
@@ -32,6 +42,7 @@
                                     <label class="col-sm-2 control-label">类别</label>
                                     <div class="col-sm-8">
                                         <select  class="selectpicker" name="category_id">
+                                            <option value="">--</option>
                                             @foreach($categories as $catefory)
                                             <option value="{{$catefory->id}}">{{$catefory->name}}</option>
                                             @endforeach
@@ -66,7 +77,7 @@
                             <tr role="row">
                                 <td>{{$article->id}}</td>
                                 <td>{{$article->category->name}}</td>
-                                <td>{{$article->title}}</td>
+                                <td><a href="{{route('admin.articles.show',$article->id)}}">{{$article->title}}</a></td>
                                 <td>
                                     @foreach($article->tags()->get() as $tag)
                                     <button type="button" class="btn-primary">{{$tag->name}}</button>
@@ -92,10 +103,19 @@
                                         <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="true">操作
                                         <span class="fa fa-caret-down"></span></button>
                                         <ul class="dropdown-menu slim-menu">
-                                            <li><a href="">编辑</a></li>
-                                            <li><a href="">置顶</a></li>
-                                            <li><a href="">展示</a></li>
-                                            <li><a href="">删除</a></li>
+                                            <li><a href="{{route('admin.articles.edit',$article->id)}}">编辑</a></li>
+                                            <li><a href="{{route('admin.articles.show',$article->id)}}">详情</a></li>
+                                            @if($article->is_front == 1)
+                                            <li><a href="{{route('admin.articles.update.status',$article->id)}}?is_front=0" data-method="post"　 data-confirm="确定不置顶?">不置顶</a></li>
+                                            @else
+                                            <li><a href="{{route('admin.articles.update.status',$article->id)}}?is_front=1" data-method="post"　 data-confirm="确定置顶?">置顶</a></li>
+                                            @endif
+                                            @if($article->status == 'active')
+                                            <li><a href="{{route('admin.articles.update.status',$article->id)}}?status=inactive" data-method="post"  data-confirm="确定不显示?">不展示</a></li>
+                                            @else
+                                            <li><a href="{{route('admin.articles.update.status',$article->id)}}?status=active" data-method="post"  data-confirm="确定显示?">展示</a></li>
+                                            @endif
+                                            <li><a href="{{route('admin.articles.destory',$article->id)}}}}"  data-method="delete" data-confirm="确定删除?">删除</a></li>
                                     </div>
                                 </td>
                             </tr>

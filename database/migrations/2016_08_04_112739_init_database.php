@@ -47,7 +47,7 @@ class InitDatabase extends Migration
 
         Schema::create('tags', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('name')->index();
+            $table->string('name')->index();
             $table->timestamps();
         });
     }

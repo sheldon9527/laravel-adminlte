@@ -31,13 +31,11 @@ Route::group(['namespace' => 'Front'], function () {
 });
 
 Route::group(['namespace' => 'Admin', 'prefix' => 'manager'], function () {
-
     // 登录页面
     Route::get('auth/login', [
         'as' => 'admin.auth.login.get',
         'uses' => 'AuthController@getLogin',
     ]);
-
     // 登录提交
     Route::post('auth/login', [
         'as' => 'admin.auth.login.post',
@@ -45,7 +43,6 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'manager'], function () {
     ]);
 
     Route::group(['middleware' => ['admin.auth']], function () {
-
         # 登出
         Route::get('logout', [
             'as' => 'admin.auth.logout',
@@ -59,7 +56,6 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'manager'], function () {
             'as' => 'admin.dashboard',
             'uses' => 'DashboardController@dashboard',
         ]);
-
         //文章
         Route::get('articles/create', [
             'as' => 'admin.articles.create',
@@ -73,7 +69,26 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'manager'], function () {
             'as' => 'admin.articles.index',
             'uses' => 'ArticleController@index',
         ]);
-
+        Route::get('articles/{id}/edit', [
+            'as' => 'admin.articles.edit',
+            'uses' => 'ArticleController@edit',
+        ]);
+        Route::put('articles/{id}', [
+            'as' => 'admin.articles.update',
+            'uses' => 'ArticleController@update',
+        ]);
+        Route::get('articles/{id}', [
+            'as' => 'admin.articles.show',
+            'uses' => 'ArticleController@show',
+        ]);
+        Route::delete('articles/{id}', [
+            'as' => 'admin.articles.destory',
+            'uses' => 'ArticleController@destory',
+        ]);
+        Route::post('articles/{id}', [
+            'as' => 'admin.articles.update.status',
+            'uses' => 'ArticleController@updateStatus',
+        ]);
     });
 
 });
