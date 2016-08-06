@@ -32,8 +32,13 @@ class ArticleController extends BaseController
         }
 
         if ($tag = $request->get('tag')) {
-            $articles->whereHas('tags', function ($query) use($tag) {
-                $query->where('name', 'like', $tag.'%');
+            $tag = explode(',', $tag);
+            $tags = array_filter($tag);
+            $articles->whereHas('tags', function ($query) use($tags) {
+                $query->where('name', 'like', array_shift($tags).'%');
+                foreach ($tags as $t) {
+                    $query->orWhere('name', 'like', $t.'%');
+                }
             });
         }
 
