@@ -160,6 +160,8 @@ return [
         App\Providers\AdminServiceProvider::class,
         //category
         Baum\Providers\BaumServiceProvider::class,
+        //qiniu
+        zgldh\QiniuStorage\QiniuFilesystemServiceProvider::class,
 
     ],
 

@@ -31,6 +31,7 @@ class AdminController extends BaseController
             $fileName = hash('ripemd160', time().rand(1000000, 99999999)).'.'.$extension;
             $filePath = (string) $avatar->move('assets/avatars/'.date('y/m/'), $fileName);
             $user->avatar = $filePath;
+            
             Attachment::syncFile($filePath);
         }
 

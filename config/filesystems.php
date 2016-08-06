@@ -53,6 +53,18 @@ return [
             'root' => storage_path('app/public'),
             'visibility' => 'public',
         ],
+        'qiniu' => [
+            'driver'  => 'qiniu',
+            'domains' => [
+                'default'   => env('QINIU_DOMAIN'), //你的七牛域名
+                'https'     => env('QINIU_HTTPS_DOMAIN'),
+                'custom'    => '',
+            ],
+            'access_key'=> env('QINIU_ACCESS_KEY'),  //AccessKey
+            'secret_key'=> env('QINIU_SECRET_KEY'),  //SecretKey
+            'bucket'    => env('QINIU_BUCKET'),  //Bucket名字
+            'notify_url'=> '',  //持久化处理回调地址
+        ],
 
         's3' => [
             'driver' => 's3',
