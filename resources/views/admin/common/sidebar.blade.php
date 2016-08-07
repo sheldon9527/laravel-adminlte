@@ -7,7 +7,7 @@
                 </div>
                 <div class="pull-left info">
                     <p></p>
-                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                    <a href="{{route('admin.users.edit')}}"><i class="fa fa-circle text-success"></i> Online</a>
                 </div>
             </div>
             <form action="#" method="get" class="sidebar-form">
@@ -76,7 +76,6 @@
                         <li class="{{
                                 \Route::is('admin.users.password.*') ? 'active' : null
                             }} treeview"><a href="{{route('admin.users.password.edit')}}"><i class="fa fa-circle-o"></i>修改密码</a></li>
-                        <li><a href="#"><i class="fa fa-circle-o"></i>社交账号</a></li>
                     </ul>
                 </li>
             </ul>

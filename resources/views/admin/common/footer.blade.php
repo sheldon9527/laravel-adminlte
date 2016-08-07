@@ -1,6 +1,6 @@
 <footer class="main-footer">
     <div class="pull-right hidden-xs">
-        SHELDON
+        {{app('admin')->user()->nickname?:app('admin')->user()->email}}
     </div>
-    <strong>Copyright © 2015 <a href="https://github.com/sheldon9527">sheldon</a>.</strong> All rights reserved.
+    <strong>Copyright © 2015 <a href="https://github.com/sheldon9527">{{app('admin')->user()->nickname?:app('admin')->user()->email}}</a>.</strong> All rights reserved.
 </footer>

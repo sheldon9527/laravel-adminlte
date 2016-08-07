@@ -7,7 +7,7 @@
     <div class="content-wrapper">
         <section class="content-header">
             <h1>
-                @yield('title', app('admin')->user()->name?:app('admin')->user()->email)
+                @yield('title', app('admin')->user()->nickname?:app('admin')->user()->email)
                 <small>@yield('page_description', null)</small>
             </h1>
         </section>

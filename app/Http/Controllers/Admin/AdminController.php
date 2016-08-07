@@ -41,7 +41,10 @@ class AdminController extends BaseController
 
         $user->nickname = $request->get('nickname');
         $user->name = $request->get('name');
-        $user->birthday = $request->get('birthday');
+        $user->gitHub_name = $request->get('gitHub_name');
+        $user->sina_id = $request->get('sina_id');
+        $user->linked_in = $request->get('linked_in');
+        $user->twitter = $request->get('twitter');
         $user->gender = strtolower($request->get('gender'));
         $user->save();
 

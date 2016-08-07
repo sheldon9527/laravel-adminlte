@@ -18,7 +18,7 @@
                                     <input type="hidden" name="_method" value="PUT">
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label"><span class="text-red">*</span>头像:</label>
-                                        <div class="col-sm-4">
+                                        <div class="col-sm-6">
                                             <img id="picture-preview" src="@if($user->avatar){{url($user->avatar)}}@endif" width="50%" height="50%">
                                             <label class="btn btn-info btn-file">
                                                 <input name="avatar" type="file" accept="image/*" data-image-preview="#picture-preview">
@@ -28,25 +28,62 @@
                                     </div>
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label"><span class="text-red">*</span>昵称:</label>
-                                        <div class="col-sm-4">
+                                        <div class="col-sm-6">
                                             <input type="text" name="nickname" value="{{$user->nickname}}" class="form-control">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <p>定义博客的名字</p>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">名字</label>
-                                        <div class="col-sm-4">
+                                        <div class="col-sm-6">
                                             <input type="text" name="name" value="{{$user->name}}" class="form-control">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <p>就是您的名字哟</p>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-sm-2 control-label">生日:</label>
+                                        <label class="col-sm-2 control-label"><span class="text-red">*</span>GitHub Name</label>
+                                        <div class="col-sm-6">
+                                            <input type="text" name="gitHub_name" value="{{$user->gitHub_name}}" class="form-control">
+                                        </div>
                                         <div class="col-sm-4">
-                                            <input type="text" name="birthday" value="{{$user->birthday}}" class="datetime form-control">
+                                            <p>请跟 GitHub 上保持一致</p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label"><span class="text-red">*</span>微博 ID</label>
+                                        <div class="col-sm-6">
+                                            <input type="text" name="sina_id" value="{{$user->sina_id}}" class="form-control">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <p>用来拼接 URL 的，如：2940709051</p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">LinkedIn</label>
+                                        <div class="col-sm-6">
+                                            <input type="text" name="linked_in" value="{{$user->linked_in}}" class="form-control">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <p>你的 <a href="https://www.linkedin.com">LinkedIn</a>
+                                                主页完整 URL 地址，如：https://www.linkedin.com/in/yeesheldon</p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Twitter 帐号</label>
+                                        <div class="col-sm-6">
+                                            <input type="text" name="twitter" value="{{$user->twitter}}" class="form-control">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <p>用来拼接 URL 如：sheldon9527yxd</p>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label"><span class="text-red">*</span>性别:</label>
-                                        <div class="col-sm-4">
+                                        <div class="col-sm-6">
                                             <div>
                                                 <select name="gender" class="selectpicker" data-width="auto">
                                                     <option value="secret" @if($user->gender =='secret') selected="selected" @endif>保密</option>
@@ -55,9 +92,12 @@
                                                 </select>
                                             </div>
                                         </div>
+                                        <div class="col-sm-4">
+                                            <p>你的性别</p>
+                                        </div>
                                     </div>
                                     <div class="form-group">
-                                        <div class="col-sm-4 col-sm-offset-2">
+                                        <div class="col-sm-6 col-sm-offset-2">
                                             <button class="btn btn-primary" type="submit">保存</button>
                                         </div>
                                     </div>
