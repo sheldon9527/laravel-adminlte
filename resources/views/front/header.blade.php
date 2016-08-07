@@ -3,7 +3,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
             <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Sheldon's Blog</div>
+        <div class="flex-col header-title ellipsis">{{$user->nickname?:$user->email}}'s Blog</div>
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
@@ -21,7 +21,7 @@
 
 <header class="content-header">
     <div class="container">
-        <h1 class="author">Sheldon's Blog</h1>
+        <h1 class="author">{{$user->nickname?:$user->email}}'s Blog</h1>
         <h5 class="subtitle">折腾不在乎成功与否。</h5>
     </div>
 </header>

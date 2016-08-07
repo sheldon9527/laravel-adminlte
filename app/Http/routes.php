@@ -24,7 +24,7 @@
 
 Route::group(['namespace' => 'Front'], function () {
     // 首页
-    Route::get('', [
+    Route::get('{customPath?}', [
         'as' => 'front.index',
         'uses' => 'HomeController@index',
     ]);

@@ -1,5 +1,5 @@
 <head>
-	<title>Sheldon's Blog | 折腾不在乎成功与否。</title>
+	<title>{{$user->nickname?:$user->email}}'s Blog | 折腾不在乎成功与否。</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta name="theme-color" content="#3F51B5">

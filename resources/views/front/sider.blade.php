@@ -4,16 +4,16 @@
 		<a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off"><i class="icon icon-lg icon-close"></i></a>
 		<div class="brand-wrap">
 			<div class="brand">
-				<a href="" class="avatar"><img src="/front/images/logo.jpg"></a>
+				<a href="" class="avatar"><img src="{{$user->avatar}}"></a>
 				<hgroup class="introduce">
-					<h5 class="nickname">易晓东</h5>
-					<a href="mailto:985829902@qq.com" title="634206017@qq.com" class="mail">985829902@qq.com</a>
+					<h5 class="nickname">{{$user->nickname}}</h5>
+					<a href="mailto:{{$user->email}}" title="{{$user->email}}" class="mail">{{$user->email}}</a>
 				</hgroup>
 			</div>
 		</div>
 		<ul class="nav flex-col">
 			<li class="waves-block waves-effect active">
-				<a href=""><i class="icon icon-lg icon-home"></i>Home</a>
+				<a href="{{route('front.index',$user->blog_url)}}"><i class="icon icon-lg icon-home"></i>Home</a>
 			</li>
 
 			<li class="waves-block waves-effect">
