@@ -25,10 +25,18 @@
                         \Route::is('admin.articles.*', 'admin.categories.*', 'admin.tags.*') ? 'active' : null
                     }} treeview"><a href="#"><i class="glyphicon glyphicon-pencil"></i> <span>文章</span> <i class="fa fa-angle-left pull-right"></i></a>
                     <ul class="treeview-menu">
-                        <li><a href="{{route('admin.articles.index')}}"><i class="glyphicon glyphicon-book"></i>所有文章</a></li>
-                        <li><a href="{{route('admin.articles.create')}}"><i class="glyphicon glyphicon-pencil"></i>写文章</a></li>
-                        <li><a href="{{route('admin.categories.index')}}"><i class="glyphicon glyphicon-bookmark"></i>分类目录</a></li>
-                        <li><a href="{{route('admin.tags.index')}}"><i class="glyphicon glyphicon-tags"></i>标签</a></li>
+                        <li class="{{
+                                \Route::is('admin.articles.index') ? 'active' : null
+                            }} treeview"><a href="{{route('admin.articles.index')}}"><i class="glyphicon glyphicon-book"></i>所有文章</a></li>
+                        <li class="{{
+                                \Route::is('admin.articles.create') ? 'active' : null
+                            }} treeview"><a href="{{route('admin.articles.create')}}"><i class="glyphicon glyphicon-pencil"></i>写文章</a></li>
+                        <li class="{{
+                                \Route::is('admin.categories.index') ? 'active' : null
+                            }} treeview"><a href="{{route('admin.categories.index')}}"><i class="glyphicon glyphicon-bookmark"></i>分类目录</a></li>
+                        <li class="{{
+                                \Route::is('admin.tags.index') ? 'active' : null
+                            }} treeview"><a href="{{route('admin.tags.index')}}"><i class="glyphicon glyphicon-tags"></i>标签</a></li>
                     </ul>
                 </li>
                 <li class="treeview">
@@ -56,10 +64,18 @@
                     }} treeview">
                     <a href="#"><i class="fa fa-laptop"></i><span>设置</span><i class="fa fa-angle-left pull-right"></i></a>
                     <ul class="treeview-menu">
-                        <li><a href="#"><i class="fa fa-circle-o"></i>博客链接<small class="label pull-right bg-green">must</small></a></li>
-                        <li><a href="{{route('admin.users.edit')}}"><i class="fa fa-circle-o"></i>基本信息</a></li>
-                        <li><a href="{{route('admin.users.email.edit')}}"><i class="fa fa-circle-o"></i>修改邮箱</a></li>
-                        <li><a href="{{route('admin.users.password.edit')}}"><i class="fa fa-circle-o"></i>修改密码</a></li>
+                        <li class="{{
+                                \Route::is('admin.users.blog.*') ? 'active' : null
+                            }} treeview"><a href="{{route('admin.users.blog.edit')}}"><i class="fa fa-circle-o"></i>博客设置<small class="label pull-right bg-green">must</small></a></li>
+                        <li class="{{
+                                \Route::is('admin.users.edit','admin.users.update') ? 'active' : null
+                            }} treeview"><a href="{{route('admin.users.edit')}}"><i class="fa fa-circle-o"></i>基本信息</a></li>
+                        <li class="{{
+                                \Route::is('admin.users.email.*') ? 'active' : null
+                            }} treeview"><a href="{{route('admin.users.email.edit')}}"><i class="fa fa-circle-o"></i>修改邮箱</a></li>
+                        <li class="{{
+                                \Route::is('admin.users.password.*') ? 'active' : null
+                            }} treeview"><a href="{{route('admin.users.password.edit')}}"><i class="fa fa-circle-o"></i>修改密码</a></li>
                         <li><a href="#"><i class="fa fa-circle-o"></i>社交账号</a></li>
                     </ul>
                 </li>

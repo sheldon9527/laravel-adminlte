@@ -53,6 +53,15 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'manager'], function () {
         });
 
         //基本信息
+
+        Route::get('blog/setting', [
+            'as' => 'admin.users.blog.edit',
+            'uses' => 'AdminController@editBlog',
+        ]);
+        Route::put('blog/setting', [
+            'as' => 'admin.users.blog.update',
+            'uses' => 'AdminController@updateBlog',
+        ]);
         Route::get('profile', [
             'as' => 'admin.users.edit',
             'uses' => 'AdminController@edit',

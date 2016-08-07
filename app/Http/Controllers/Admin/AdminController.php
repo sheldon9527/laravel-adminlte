@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Requests\Admin\User\UpdateProfileRequest;
 use App\Http\Requests\Admin\User\UpdateEmailRequest;
 use App\Http\Requests\Admin\User\UpdatePasswordRequest;
+use App\Http\Requests\Admin\User\UpdateBlogRequest;
 use App\Models\Attachment;
 use App\Models\Admin;
 
@@ -125,5 +126,33 @@ class AdminController extends BaseController
         $user->save();
 
         return redirect(route('admin.users.password.edit'));
+    }
+
+
+    public function editBlog()
+    {
+        $user = $this->user();
+
+        if (!$user) {
+            abort(404);
+        }
+
+        return view('admin.user.editBlog',compact('user'));
+    }
+
+
+    public function updateBlog(UpdateBlogRequest $request)
+    {
+        $user = $this->user();
+
+        if (!$user) {
+            abort(404);
+        }
+
+        $user->blog_url =$request->get('blog_url');
+
+        $user->save();
+
+        return redirect(route('admin.users.blog.edit'));
     }
 }
