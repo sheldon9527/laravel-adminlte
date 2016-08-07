@@ -32,7 +32,7 @@
                                             <input type="text" name="nickname" value="{{$user->nickname}}" class="form-control">
                                         </div>
                                         <div class="col-sm-4">
-                                            <p>定义博客的名字</p>
+                                            <p>用户昵称</p>
                                         </div>
                                     </div>
                                     <div class="form-group">

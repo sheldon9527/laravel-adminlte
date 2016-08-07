@@ -4,7 +4,7 @@
 </a>
 <script>
 var BLOG_SHARE = {
-    title: "Sheldon's Blog",
+    title: "{{$user->blog_url?:$user->email}}'s Blog",
     pic: "/images/logo.jpg",
     summary: document.getElementsByName('summary')[0].content,
     url: ""

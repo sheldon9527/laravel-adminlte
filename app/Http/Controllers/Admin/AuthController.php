@@ -31,6 +31,12 @@ class AuthController extends BaseController
         return redirect($redirect);
     }
 
+
+    public function getSignup()
+    {
+        return view('admin.auth.signup');
+    }
+
     public function logout()
     {
         app('admin')->logout();

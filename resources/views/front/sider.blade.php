@@ -6,7 +6,7 @@
 			<div class="brand">
 				<a href="" class="avatar"><img src="{{$user->avatar}}"></a>
 				<hgroup class="introduce">
-					<h5 class="nickname">{{$user->nickname}}</h5>
+					<h5 class="nickname">{{$user->blog_url}}</h5>
 					<a href="mailto:{{$user->email}}" title="{{$user->email}}" class="mail">{{$user->email}}</a>
 				</hgroup>
 			</div>

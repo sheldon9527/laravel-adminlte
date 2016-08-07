@@ -42,6 +42,16 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'manager'], function () {
         'uses' => 'AuthController@postLogin',
     ]);
 
+    Route::get('auth/signup', [
+        'as' => 'admin.auth.signup.get',
+        'uses' => 'AuthController@getSignup',
+    ]);
+
+    Route::post('auth/signup', [
+        'as' => 'admin.auth.signup.post',
+        'uses' => 'AuthController@getSignup',
+    ]);
+
     Route::group(['middleware' => ['admin.auth']], function () {
         # 登出
         Route::get('logout', [
