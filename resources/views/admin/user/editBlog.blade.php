@@ -18,8 +18,11 @@
                                     <input type="hidden" name="_method" value="PUT">
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label"><span class="text-red">*</span>自定义博客地址</label>
+                                        <div class="col-sm-6">
+                                            {{env('ADMIN')}}<input type="text" name="blog_url" value="{{$user->blog_url}}" required=""  placeholder="拼接博客地址" class="form-control">
+                                        </div>
                                         <div class="col-sm-4">
-                                            {{env('ADMIN')}}<input type="text" name="blog_url" value="{{$user->blog_url}}" class="form-control">
+                                            <p>用来拼接 URL 的，如：sheldon</p>
                                         </div>
                                     </div>
                                     <div class="form-group">

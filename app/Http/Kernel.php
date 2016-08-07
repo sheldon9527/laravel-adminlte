@@ -43,6 +43,7 @@ class Kernel extends HttpKernel
      */
     protected $routeMiddleware = [
         'admin.auth' => \App\Http\Middleware\AdminAuthenticate::class,
+        'manager.delete' => \App\Http\Middleware\ManagerMiddleware::class,
         'csrf' => \App\Http\Middleware\VerifyCsrfToken::class
     ];
 }

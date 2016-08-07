@@ -22,7 +22,7 @@
 |
 */
 
-Route::group(['namespace' => 'Front'], function () {
+Route::group(['namespace' => 'Front','middleware' => ['manager.delete']], function () {
     // 首页
     Route::get('{customPath?}', [
         'as' => 'front.index',
@@ -51,6 +51,11 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'manager'], function () {
         Route::get('/', function () {
             return redirect(route('admin.dashboard'));
         });
+        // Dashboard
+        Route::get('dashboard', [
+            'as' => 'admin.dashboard',
+            'uses' => 'DashboardController@dashboard',
+        ]);
 
         //基本信息
 
@@ -86,11 +91,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'manager'], function () {
             'as' => 'admin.users.password.update',
             'uses' => 'AdminController@updatePassword',
         ]);
-        // Dashboard
-        Route::get('dashboard', [
-            'as' => 'admin.dashboard',
-            'uses' => 'DashboardController@dashboard',
-        ]);
+
         //文章
         Route::get('articles/create', [
             'as' => 'admin.articles.create',
