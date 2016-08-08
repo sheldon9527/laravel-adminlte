@@ -13,6 +13,7 @@ config/test
 /node_modules
 /doc
 .env
+.env.example
 *.swp
 .swo
 /public/assets

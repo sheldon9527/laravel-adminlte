@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\Admin\Auth\StoreRequest;
+use App\Http\Requests\Admin\Auth\SendCodeRequest;
+use App\Models\Admin;
 
 class AuthController extends BaseController
 {
@@ -31,10 +33,81 @@ class AuthController extends BaseController
         return redirect($redirect);
     }
 
-
     public function getSignup()
     {
         return view('admin.auth.signup');
+    }
+
+    public function postSignup()
+    {
+        return view('admin.auth.signup');
+    }
+
+    public function sendCode(SendCodeRequest $request)
+    {
+        $email = $request->get('email');
+
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            return redirect(route('admin.auth.signup.get'))->withErrors('邮箱格式不正确');
+        }
+
+        $admin = Admin::where('email', $email)->first();
+
+        if ($admin) {
+            return redirect(route('admin.auth.signup.get'))->withErrors(['账号已经存在']);
+        }
+        if (!$this->sendVerifyCode($email)) {
+            return $this->response->errorInternal();
+        }
+
+        return $this->response->noContent();
+    }
+    // 发送验证码，存入cache
+    private function sendVerifyCode($email)
+    {
+        $code = $this->generateVerifyCode(6);
+
+        $ret = $this->sendVerifyEmail($email, $code);
+        if ($ret) {
+            $expireMinutes = 10;
+            $cacheKey = $this->getVerifyKey($email);
+            \Cache::store('database')->put($cacheKey, $code, $expireMinutes);
+        }
+
+        return $ret;
+    }
+
+    // 发送验证邮件
+    private function sendVerifyEmail($email, $code)
+    {
+        $view = 'email.verify-code';
+        \Mail::send($view, ['code' => $code], function ($message) use ($email) {
+            $message->to($email)->subject('Sheldon 博客网站');
+        });
+        $ret = count(\Mail::failures()) == 0 ? true : false;
+
+        return $ret;
+    }
+
+    //  生成验证码
+    private function generateVerifyCode($bit)
+    {
+        if (env('APP_DEBUG')) {
+            return '1234';
+        }
+
+        $startNumber = 0;
+        $endNUmber = pow(10, $bit) - 1;
+
+        $verifyCode = sprintf('%06d', mt_rand($startNumber, $endNUmber));
+
+        return $verifyCode;
+    }
+
+    // 根据用户名生成验证key
+    private function getVerifyKey($email)
+    {
+        return 'verifyCode-'.$email;
     }
 
     public function logout()

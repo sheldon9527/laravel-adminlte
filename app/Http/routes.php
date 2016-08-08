@@ -22,7 +22,7 @@
 |
 */
 
-Route::group(['namespace' => 'Front','middleware' => ['manager.delete']], function () {
+Route::group(['namespace' => 'Front', 'middleware' => ['manager.delete']], function () {
     // 首页
     Route::get('{customPath?}', [
         'as' => 'front.index',
@@ -49,7 +49,12 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'manager'], function () {
 
     Route::post('auth/signup', [
         'as' => 'admin.auth.signup.post',
-        'uses' => 'AuthController@getSignup',
+        'uses' => 'AuthController@postSignup',
+    ]);
+
+    Route::post('auth/sendCode', [
+        'as' => 'admin.auth.sendCode.post',
+        'uses' => 'AuthController@sendCode',
     ]);
 
     Route::group(['middleware' => ['admin.auth']], function () {
@@ -159,7 +164,6 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'manager'], function () {
             'as' => 'admin.tags.index',
             'uses' => 'TagController@index',
         ]);
-
 
     });
 

@@ -54,7 +54,7 @@ return [
     |
     */
 
-    'from' => ['address' => null, 'name' => null],
+    'from' => ['address' => 'service@defara.com', 'name' => 'Sheldon 博客网站'],
 
     /*
     |--------------------------------------------------------------------------
