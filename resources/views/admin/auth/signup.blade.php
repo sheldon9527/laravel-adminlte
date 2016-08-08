@@ -19,20 +19,18 @@
             <div class="login-logo">
                 <a href="{{route('front.index')}}"><b>博客</b> - 管理</a>
             </div>
+
             <div class="login-box-body">
                 <p class="login-box-msg">创建你的博客发布你的文章</p>
                 <p class="login-box-msg"><span class="text-red">*全部为必填想项</span></p>
                 <form action="{{ route('admin.auth.signup.post') }}" method="POST" id='table-signup'>
-                    @include('admin.common.errors', ['errors'=>$errors])
                     <div class="form-group has-feedback">
                         <input type="text" name="email" class="form-control" placeholder="邮箱" value="" required>
                         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                     </div>
                     <div class="form-group has-feedback">
-                        <div>
-                            <input type="text" name="code" class="form-control" placeholder="输入验证码" value="" required>
-                            <a href="" class="pull-right code"><h3><b>发送验证码</b></h3></button></a>
-                        </div>
+                        <input type="text" name="code" class="form-control" placeholder="输入验证码" value="" required>
+                        <a href="" class="pull-right code"><h4>免费获取验证码</h4></a>
                         </br>
                     </div>
                     <div class="form-group has-feedback">
@@ -63,14 +61,17 @@
                 </form>
             </div>
         </div>
-        
+
         <script type="text/javascript">
             require(['jquery'], function($) {
+
                 $('#table-signup').on('click', '.code', function() {
+                    var $email = $(":input[name='email']").val();
 
-                    var $email = '985829902@qq.com';
-
-                    console.log($email);
+                    if(!$email){
+                        alert('邮箱不能为空');
+                        return;
+                    }
                     $.ajax({
                         url: '/manager/auth/sendCode',
                         type: 'POST',
@@ -80,9 +81,16 @@
                     })
                     .done(function(data) {
                         if (data.success == 1) {
+                            alert('邮件发送成功');
+                            $(":input[name='email']").val(data.email);
+                        }else {
+                            alert(data.error);
+                            $(":input[name='email']").val(data.email);
                         }
                     });
                 });
+
+
             });
         </script>
     </body>

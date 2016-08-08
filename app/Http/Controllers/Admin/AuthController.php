@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\Admin\Auth\StoreRequest;
-use App\Http\Requests\Admin\Auth\SendCodeRequest;
+use Illuminate\Http\Request;
 use App\Models\Admin;
 
 class AuthController extends BaseController
@@ -43,24 +43,28 @@ class AuthController extends BaseController
         return view('admin.auth.signup');
     }
 
-    public function sendCode(SendCodeRequest $request)
+    public function sendCode(Request $request)
     {
         $email = $request->get('email');
+        // $request->flash();
 
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            return redirect(route('admin.auth.signup.get'))->withErrors('邮箱格式不正确');
+            return response()->json(['success' => 0, 'error' => '邮箱格式不正确', 'email' => $email]);
         }
 
         $admin = Admin::where('email', $email)->first();
 
         if ($admin) {
-            return redirect(route('admin.auth.signup.get'))->withErrors(['账号已经存在']);
-        }
-        if (!$this->sendVerifyCode($email)) {
-            return $this->response->errorInternal();
+            return response()->json(['success' => 0, 'error' => '账号已经存在', 'email' => $email]);
         }
 
-        return $this->response->noContent();
+        if (!$this->sendVerifyCode($email)) {
+            return response()->json(['success' => 0, 'error' => '发送失败', 'email' => $email]);
+        }
+
+        if ($this->request->ajax()) {
+            return response()->json(['success' => 1, 'email' => $email]);
+        }
     }
     // 发送验证码，存入cache
     private function sendVerifyCode($email)
