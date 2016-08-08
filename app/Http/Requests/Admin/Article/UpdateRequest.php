@@ -10,6 +10,7 @@ class UpdateRequest extends Request
     {
         return [
             'title' => 'required',
+            'description' => 'required',
             'content' => 'required',
             'tag' => 'required',
             'status' => 'required|in:active,inactive',
@@ -22,6 +23,7 @@ class UpdateRequest extends Request
     {
         return [
             'title.required' => '请填写标题',
+            'description.required' => '请填写描述',
             'content.required' => '请填写内容',
             'tag.required' => '请填写标签',
             'status.required' => '请选择是否显示',

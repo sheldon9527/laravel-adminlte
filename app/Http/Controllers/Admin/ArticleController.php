@@ -64,6 +64,7 @@ class ArticleController extends BaseController
         $article->admin_id = $this->user()->id;
         $article->category_id = $request->get('category_id');
         $article->title = $request->get('title');
+        $article->description = $request->get('description');
         $article->content = $content;
         $article->catalog = $request->get('catalog');
         $article->status = strtolower($request->get('status'));
@@ -108,6 +109,7 @@ class ArticleController extends BaseController
         $article->admin_id = $user->id;
         $article->category_id = $request->get('category_id');
         $article->title = $request->get('title');
+        $article->description = $request->get('description');
         $article->content = $content;
         $article->catalog = $request->get('catalog');
         $article->status = strtolower($request->get('status'));

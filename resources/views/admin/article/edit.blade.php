@@ -17,6 +17,10 @@
                                 <label><span class="text-red">*</span>标题</label>
                                 <input type="text" name="title" value="{{$article->title}}" class="form-control" placeholder="标题" required="">
                             </div>
+                            <div class="form-group">
+                                <label><span class="text-red">*</span>描述</label>
+                                <textarea type="text" name="description" rows="3" cols="62" class="form-control" >{{$article->description}}</textarea>
+                            </div>
 							<div class="form-group">
 								<label for=""><span class="text-red">*</span>内容</label>
 								<style>
