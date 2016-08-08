@@ -12,6 +12,8 @@ class HomeController extends BaseController
             abort(404);
         }
 
-        return view('front.index', compact('user'));
+        $articles = $user->articles;
+
+        return view('front.index', compact('user','articles'));
     }
 }
