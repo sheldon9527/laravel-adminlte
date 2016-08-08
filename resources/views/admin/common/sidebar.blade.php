@@ -3,7 +3,7 @@
         <div class="sidebar" id="scrollspy">
             <div class="user-panel">
                 <div class="pull-left image">
-                    <img src="@if(env('APP_ENV')=='local'){{url(app('admin')->user()->avatar)}} @else {{env('QINIU_DOMAIN').'/'.(app('admin')->user()->avatar)}} @endif" class="img-circle" alt="User Image"/>
+                    <img src="@if(env('APP_ENV')=='local'){{url(app('admin')->user()->avatar?:url('/images/default.png'))}} @else {{env('QINIU_DOMAIN').'/'.(app('admin')->user()->avatar)?:url('/images/default.png')}} @endif" class="img-circle" alt="User Image"/>
                 </div>
                 <div class="pull-left info">
                     <p></p>
