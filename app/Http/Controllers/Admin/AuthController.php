@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\Admin\Auth\StoreRequest;
+use App\Http\Requests\Admin\Auth\SignupRequest;
 use Illuminate\Http\Request;
 use App\Models\Admin;
 
@@ -38,9 +39,38 @@ class AuthController extends BaseController
         return view('admin.auth.signup');
     }
 
-    public function postSignup()
+    public function postSignup(SignupRequest $request)
     {
-        return view('admin.auth.signup');
+        $code = $request->get('code');
+        $email = $request->get('email');
+        $blogUrl = $request->get('blog_url');
+        $password = $request->get('password');
+
+        $cacheKey = $this->getVerifyKey($email);
+        $verifyCodeCache = \Cache::store('database')->get($cacheKey);
+
+        if ($code != $verifyCodeCache) {
+            return redirect(route('admin.auth.signup.get'))->withErrors(['验证码不正确']);
+        }
+
+        $admin = Admin::where('blog_url', $blogUrl)->first();
+        if ($admin) {
+            return redirect(route('admin.auth.signup.get'))->withErrors(['博客名称已经存在']);
+        }
+
+        $newAdmin = new Admin();
+
+        $newAdmin->email = $email;
+        $newAdmin->blog_url = $blogUrl;
+        $newAdmin->password = bcrypt($password);
+
+        $newAdmin->save();
+
+        \Cache::store('database')->forget($cacheKey);
+
+        $request->flashOnly('email');
+
+        return redirect(route('admin.auth.login.get'));
     }
 
     public function sendCode(Request $request)

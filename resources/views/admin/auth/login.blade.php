@@ -22,7 +22,7 @@
                 <form action="{{ route('admin.auth.login.post') }}" method="POST">
                     @include('admin.common.errors', ['errors'=>$errors])
                     <div class="form-group has-feedback">
-                        <input type="text" name="email" class="form-control" placeholder="邮箱" value="{{old('username')}}" required>
+                        <input type="text" name="email" class="form-control" placeholder="邮箱" value="{{old('email')}}" required>
                         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                     </div>
                     <div class="form-group has-feedback">

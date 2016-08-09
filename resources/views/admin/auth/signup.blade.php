@@ -23,18 +23,19 @@
             <div class="login-box-body">
                 <p class="login-box-msg">创建你的博客发布你的文章</p>
                 <p class="login-box-msg"><span class="text-red">*全部为必填想项</span></p>
+                @include('admin.common.errors', ['errors'=>$errors])
                 <form action="{{ route('admin.auth.signup.post') }}" method="POST" id='table-signup'>
                     <div class="form-group has-feedback">
-                        <input type="text" name="email" class="form-control" placeholder="邮箱" value="" required>
+                        <input type="text" name="email" class="form-control" placeholder="邮箱" value="{{old('email')}}" required>
                         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                     </div>
                     <div class="form-group has-feedback">
-                        <input type="text" name="code" class="form-control" placeholder="输入验证码" value="" required>
+                        <input type="text" name="code" class="form-control" placeholder="输入验证码" value="{{old('code')}}" required>
                         <a href="javascript:;" class="pull-right code"><h4><input type="button" id="btn" value="免费获取验证码" /> </h4></a>
                         </br>
                     </div>
                     <div class="form-group has-feedback">
-                        <input type="text" name="email" class="form-control" placeholder="博客名称(链接)　例如: sheldon" value="" required>
+                        <input type="text" name="blog_url" class="form-control" placeholder="博客名称(链接)　例如: sheldon" value="{{old('blog_url')}}" required>
                         <span class="glyphicon glyphicon-user form-control-feedback"></span>
                     </div>
                     <div class="form-group has-feedback">
