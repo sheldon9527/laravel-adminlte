@@ -62,7 +62,7 @@ class AuthController extends BaseController
             return response()->json(['success' => 0, 'error' => '发送失败', 'email' => $email]);
         }
 
-        if ($this->request->ajax()) {
+        if ($request->ajax()) {
             return response()->json(['success' => 1, 'email' => $email]);
         }
     }

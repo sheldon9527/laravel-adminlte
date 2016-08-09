@@ -30,7 +30,7 @@
                     </div>
                     <div class="form-group has-feedback">
                         <input type="text" name="code" class="form-control" placeholder="输入验证码" value="" required>
-                        <a href="" class="pull-right code"><h4>免费获取验证码</h4></a>
+                        <a href="javascript:;" class="pull-right code"><h4><input type="button" id="btn" value="免费获取验证码" /> </h4></a>
                         </br>
                     </div>
                     <div class="form-group has-feedback">
@@ -72,6 +72,7 @@
                         alert('邮箱不能为空');
                         return;
                     }
+                    console.log($email);
                     $.ajax({
                         url: '/manager/auth/sendCode',
                         type: 'POST',
@@ -81,16 +82,28 @@
                     })
                     .done(function(data) {
                         if (data.success == 1) {
-                            alert('邮件发送成功');
-                            $(":input[name='email']").val(data.email);
                         }else {
                             alert(data.error);
-                            $(":input[name='email']").val(data.email);
                         }
                     });
                 });
-
-
+                document.getElementById("btn").onclick=function(){time(this);}
+                var wait=60;
+                function time(o) {
+                    if (wait == 0) {
+                        o.removeAttribute("disabled");
+                        o.value="免费获取验证码";
+                        wait = 60;
+                    } else {
+                        o.setAttribute("disabled", true);
+                        o.value="重新发送(" + wait + ")";
+                        wait--;
+                        setTimeout(function() {
+                            time(o)
+                        },
+                        1000)
+                    }
+                }
             });
         </script>
     </body>
