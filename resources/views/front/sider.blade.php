@@ -4,7 +4,7 @@
 		<a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off"><i class="icon icon-lg icon-close"></i></a>
 		<div class="brand-wrap">
 			<div class="brand">
-				<a href="" class="avatar"><img src="{{$user->avatar}}"></a>
+				<a href="" class="avatar"><img src="@if(env('APP_ENV')=='local'){{url($user->avatar?:'/images/default.png')}} @else {{env('QINIU_DOMAIN').'/'.$user->avatar?:'/images/default.png'}} @endif"></a>
 				<hgroup class="introduce">
 					<h5 class="nickname">{{$user->blog_url}}</h5>
 					<a href="mailto:{{$user->email}}" title="{{$user->email}}" class="mail">{{$user->email}}</a>
