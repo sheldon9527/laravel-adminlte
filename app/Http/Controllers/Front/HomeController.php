@@ -12,7 +12,7 @@ class HomeController extends BaseController
             abort(404);
         }
 
-        $articles = $user->articles;
+        $articles = $user->articles()->orderBy('id', 'desc')->paginate(1);
 
         return view('front.index', compact('user','articles'));
     }

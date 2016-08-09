@@ -28,6 +28,11 @@ Route::group(['namespace' => 'Front', 'middleware' => ['manager.delete']], funct
         'as' => 'front.index',
         'uses' => 'HomeController@index',
     ]);
+
+    Route::get('{customPath?}/articles/{id}', [
+        'as' => 'front.articles.show',
+        'uses' => 'ArticleController@articleShow',
+    ]);
 });
 
 Route::group(['namespace' => 'Admin', 'prefix' => 'manager'], function () {
