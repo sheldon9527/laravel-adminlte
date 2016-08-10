@@ -33,6 +33,11 @@ Route::group(['namespace' => 'Front', 'middleware' => ['manager.delete']], funct
         'as' => 'front.articles.show',
         'uses' => 'ArticleController@articleShow',
     ]);
+
+    Route::get('{customPath?}/u-tags', [
+        'as' => 'front.tags.show',
+        'uses' => 'TagController@TagShow',
+    ]);
 });
 
 Route::group(['namespace' => 'Admin', 'prefix' => 'manager'], function () {

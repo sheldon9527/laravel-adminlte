@@ -21,7 +21,7 @@
 			</li>
 
 			<li class="waves-block waves-effect">
-				<a href=""><i class="icon icon-lg icon-tags"></i>Tags</a>
+				<a href="{{route('front.tags.show',$user->blog_url)}}"><i class="icon icon-lg icon-tags"></i>Tags</a>
 			</li>
             @if($user->gitHub_name)
 			<li class="waves-block waves-effect">
