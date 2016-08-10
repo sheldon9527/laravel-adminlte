@@ -29,7 +29,7 @@ Route::group(['namespace' => 'Front', 'middleware' => ['manager.delete']], funct
         'uses' => 'HomeController@index',
     ]);
 
-    Route::get('{customPath?}/articles/{id}', [
+    Route::get('{customPath?}/u-articles/{id}', [
         'as' => 'front.articles.show',
         'uses' => 'ArticleController@articleShow',
     ]);
