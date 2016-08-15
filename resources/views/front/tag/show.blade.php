@@ -6,7 +6,7 @@
 		<ul class="tag-list">
 			@foreach($tags as $tag)
 			<li class="tag-list-item">
-				<a class="tag-list-link" href="">#{{$tag}}</a>
+				<a class="tag-list-link" href="{{route('front.articles.index',$user->blog_url)}}?tag={{$tag}}">#{{$tag}}</a>
 				<span class="tag-list-count">2</span>
 			</li>
 			@endforeach

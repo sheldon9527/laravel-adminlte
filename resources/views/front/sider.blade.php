@@ -17,7 +17,7 @@
 			</li>
 
 			<li class="waves-block waves-effect">
-				<a href=""><i class="icon icon-lg icon-archives"></i>Archives</a>
+				<a href="{{route('front.articles.index',$user->blog_url)}}"><i class="icon icon-lg icon-archives"></i>Archives</a>
 			</li>
 
 			<li class="waves-block waves-effect">

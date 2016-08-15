@@ -7,7 +7,7 @@
                 <nav class="post-toc-wrap" id="post-toc">
                     <h4>TOC</h4>
                     <ol class="post-toc">
-                        <?php $tocs = explode(',',$article->catalog)?>
+                        <?php $tocs = explode(',', $article->catalog)?>
                         @foreach($tocs as $toc)
                         <li class="post-toc-item post-toc-level-2">
                             <a class="post-toc-link" href="#{{$toc}}"><span class="post-toc-number">1.</span><span class="post-toc-text">{{$toc}}</span></a>
