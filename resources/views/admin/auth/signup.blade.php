@@ -65,7 +65,6 @@
 
         <script type="text/javascript">
             require(['jquery'], function($) {
-
                 $('#table-signup').on('click', '#btn', function() {
                     var email = $(":input[name='email']").val();
                     console.log(email);
@@ -84,29 +83,29 @@
                     .done(function(data) {
                         if (data.success == 1) {
 
-                              document.getElementById("btn").onclick=function(){time(this);}
-                              var wait=60;
-                              function time(o) {
-                                  if (wait == 0) {
-                                      o.removeAttribute("disabled");
-                                      o.value="免费获取验证码";
-                                      wait = 60;
-                                  } else {
-                                      o.setAttribute("disabled", true);
-                                      o.value="重新发送(" + wait + ")";
-                                      wait--;
-                                      setTimeout(function() {
-                                          time(o)
-                                      },
-                                      1000)
-                                  }
-                              }
-
                         }else {
                             alert(data.error);
                         }
                     });
                 });
+
+            document.getElementById("btn").onclick=function(){time(this);}
+            var wait=60;
+            function time(o) {
+                if (wait == 0) {
+                    o.removeAttribute("disabled");
+                    o.value="免费获取验证码";
+                    wait = 60;
+                } else {
+                    o.setAttribute("disabled", true);
+                    o.value="重新发送(" + wait + ")";
+                    wait--;
+                    setTimeout(function() {
+                        time(o)
+                    },
+                    1000)
+                }
+            }
             });
         </script>
     </body>
