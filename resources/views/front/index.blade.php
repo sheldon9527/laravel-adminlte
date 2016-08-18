@@ -16,7 +16,7 @@
             </div>
             <ul class="article-tag-list">
                 @foreach($article->tags as $tag)
-                <li class="article-tag-list-item"><a class="article-tag-list-link waves-effect waves-button" href="">#{{$tag->name}}</a></li>
+                <li class="article-tag-list-item"><a class="article-tag-list-link waves-effect waves-button" href="{{route('front.articles.index',$user->blog_url)}}?tag={{$tag->name}}">#{{$tag->name}}</a></li>
                 @endforeach
             </ul>
         </article>
@@ -26,11 +26,9 @@
 <nav id="page-nav">
     <div class="inner">
         <span class="page-number current waves-effect waves-button">1</span>
-        <a class="page-number waves-effect waves-button" href="">2</a>
-        <a class="page-number waves-effect waves-button" href="http://www.imys.net/page/3/">3</a>
         <span class="space waves-effect waves-button">…</span>
-        <a class="page-number waves-effect waves-button" href="http://www.imys.net/page/6/">6</a>
-        <a class="extend next waves-effect waves-button" rel="next" href="http://www.imys.net/page/2/">下一页</a>
+        <a class="page-number waves-effect waves-button" href="">2</a>
+        <a class="extend next waves-effect waves-button" rel="next" href="">下一页</a>
     </div>
 </nav>
 @endsection

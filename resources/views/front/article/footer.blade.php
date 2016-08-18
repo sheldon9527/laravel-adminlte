@@ -3,7 +3,7 @@
            <ul class="article-tag-list">
                @foreach($article->tags as $tag)
                <li class="article-tag-list-item">
-                   <a class="article-tag-list-link waves-effect waves-button" href="">#{{$tag->name}}</a>
+                   <a class="article-tag-list-link waves-effect waves-button" href="{{route('front.articles.index',$user->blog_url)}}?tag={{$tag->name}}">#{{$tag->name}}</a>
                </li>
                @endforeach
            </ul>
