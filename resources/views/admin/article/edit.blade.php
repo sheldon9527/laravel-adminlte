@@ -69,8 +69,8 @@
                                 <div>
                                     <label class="control-label"><span class="text-red">*</span>是否置顶:</label>
                                     <select name="is_front" class="selectpicker" data-width="auto">
-                                        <option value="0" @if($article->status ==0) selected="selected" @endif>否</option>
-                                        <option value="1" @if($article->status ==1) selected="selected" @endif>是</option>
+                                        <option value="0" @if($article->is_front ==0) selected="selected" @endif>否</option>
+                                        <option value="1" @if($article->is_front ==1) selected="selected" @endif>是</option>
                                     </select>
                                 </div>
                             </div>
