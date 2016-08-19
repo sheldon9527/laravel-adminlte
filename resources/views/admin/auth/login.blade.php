@@ -39,7 +39,7 @@
                     <div class="row">
                         <div class="col-xs-8"><a href='{{route('admin.auth.signup.get')}}'><b>注册</b> - 拥有自己的博客</a></div>
                         <div class="col-xs-4">
-                            <a href=''>忘记密码?</a>
+                            <a href='{{route('admin.auth.password.get')}}'>忘记密码?</a>
                         </div>
                     </div>
                 </form>

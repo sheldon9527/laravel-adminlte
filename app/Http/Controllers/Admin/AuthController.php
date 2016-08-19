@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\Admin\Auth\StoreRequest;
 use App\Http\Requests\Admin\Auth\SignupRequest;
+use App\Http\Requests\Admin\Auth\modityPasswordRequest;
 use Illuminate\Http\Request;
 use App\Models\Admin;
 
@@ -45,12 +46,21 @@ class AuthController extends BaseController
         $email = $request->get('email');
         $blogUrl = $request->get('blog_url');
         $password = $request->get('password');
-
+        $request->flash();
         $cacheKey = $this->getVerifyKey($email);
         $verifyCodeCache = \Cache::store('database')->get($cacheKey);
 
+        $admin = Admin::where('email', $email)->first();
+
+        if ($admin) {
+            return redirect(route('admin.auth.signup.get'))->withErrors(['邮箱已经存在']);
+        }
+
         if ($code != $verifyCodeCache) {
             return redirect(route('admin.auth.signup.get'))->withErrors(['验证码不正确']);
+        }
+        if ($blogUrl == 'manager') {
+            return redirect(route('admin.auth.signup.get'))->withErrors(['博客连接已经存在']);
         }
 
         $admin = Admin::where('blog_url', $blogUrl)->first();
@@ -70,7 +80,7 @@ class AuthController extends BaseController
 
         $request->flashOnly('email');
 
-        return redirect(route('admin.auth.login.get'));
+        return view('admin.auth.success');
     }
 
     public function sendCode(Request $request)
@@ -79,17 +89,11 @@ class AuthController extends BaseController
         // $request->flash();
 
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            return response()->json(['success' => 0, 'error' => '邮箱格式不正确', 'email' => $email]);
-        }
-
-        $admin = Admin::where('email', $email)->first();
-
-        if ($admin) {
-            return response()->json(['success' => 0, 'error' => '账号已经存在', 'email' => $email]);
+            return response()->json(['success' => 0, 'error' => '*邮箱格式不正确', 'email' => $email]);
         }
 
         if (!$this->sendVerifyCode($email)) {
-            return response()->json(['success' => 0, 'error' => '发送失败', 'email' => $email]);
+            return response()->json(['success' => 0, 'error' => '*发送失败', 'email' => $email]);
         }
 
         if ($request->ajax()) {
@@ -142,6 +146,39 @@ class AuthController extends BaseController
     private function getVerifyKey($email)
     {
         return 'verifyCode-'.$email;
+    }
+
+    public function password()
+    {
+        return view('admin.auth.modityPassword');
+    }
+
+    public function modityPassword(modityPasswordRequest $request)
+    {
+        $code = $request->get('code');
+        $email = $request->get('email');
+        $password = $request->get('password');
+        $request->flash();
+        $cacheKey = $this->getVerifyKey($email);
+        $verifyCodeCache = \Cache::store('database')->get($cacheKey);
+
+        $admin = Admin::where('email', $email)->first();
+
+        if (!$admin) {
+            return redirect(route('admin.auth.signup.get'))->withErrors(['邮箱不已经存在']);
+        }
+
+        if ($code != $verifyCodeCache) {
+            return redirect(route('admin.auth.signup.get'))->withErrors(['验证码不正确']);
+        }
+
+        $admin->password = bcrypt($password);
+
+        $admin->save();
+
+        \Cache::store('database')->forget($cacheKey);
+
+        return view('admin.auth.success');
     }
 
     public function logout()

@@ -21,10 +21,9 @@
             </div>
 
             <div class="login-box-body">
-                <p class="login-box-msg">创建你的博客发布你的文章</p>
-                <p class="login-box-msg"><span class="text-red">*全部为必填想项</span></p>
+              <p class="login-box-msg">修改密码</p>
                 @include('admin.common.errors', ['errors'=>$errors])
-                <form action="{{ route('admin.auth.signup.post') }}" method="POST" id='table-signup'>
+                <form action="{{ route('admin.auth.modity.password') }}" method="POST" id='table-signup'>
                     <p id="verification" class="text-red"></p>
                     <div class="form-group has-feedback">
                         <input type="text" name="email" class="form-control" placeholder="邮箱" value="{{old('email')}}" required>
@@ -37,21 +36,17 @@
                         </br>
                     </div>
                     <div class="form-group has-feedback">
-                        <input type="text" name="blog_url" class="form-control" placeholder="博客(链接)包含字母、数字 例如: sheldon" value="{{old('blog_url')}}" required>
-                        <span class="glyphicon glyphicon-user form-control-feedback"></span>
-                    </div>
-                    <div class="form-group has-feedback">
-                        <input type="password"  name="password" class="form-control" placeholder="密码" required>
+                        <input type="password"  name="password" class="form-control" placeholder="新密码" required>
                         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                     </div>
                     <div class="form-group has-feedback">
-                        <input type="password"  name="password_confirmation" class="form-control" placeholder="确认密码" required>
+                        <input type="password"  name="password_confirmation" class="form-control" placeholder="确认新密码" required>
                         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                     </div>
                     <div class="row">
                         <div class="col-xs-8"></div>
                         <div class="col-xs-4">
-                            <button type="submit" class="btn btn-primary btn-block btn-flat">注册</button>
+                            <button type="submit" class="btn btn-primary btn-block btn-flat">确定修改</button>
                         </div>
                     </div>
                     <div class="row">&nbsp;</div>

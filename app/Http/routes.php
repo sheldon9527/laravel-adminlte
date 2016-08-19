@@ -72,6 +72,16 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'manager'], function () {
         'uses' => 'AuthController@sendCode',
     ]);
 
+    //修改密码
+    Route::get('auth/password', [
+        'as' => 'admin.auth.password.get',
+        'uses' => 'AuthController@password',
+    ]);
+    Route::post('auth/password', [
+        'as' => 'admin.auth.modity.password',
+        'uses' => 'AuthController@modityPassword',
+    ]);
+
     Route::group(['middleware' => ['admin.auth']], function () {
         # 登出
         Route::get('logout', [
