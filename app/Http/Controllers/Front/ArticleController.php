@@ -15,8 +15,10 @@ class ArticleController extends BaseController
         }
 
         $article = $user->articles()->find($id);
+        $perArticle = $this->getPrevArticle($id, $user);
+        $nextArticle = $this->getNextArticle($id, $user);
 
-        return view('front.article.show', compact('user', 'article'));
+        return view('front.article.show', compact('user', 'article', 'nextArticle', 'perArticle'));
     }
 
     public function articleIndex($customPath = null, IndexRequest $request)
@@ -40,8 +42,17 @@ class ArticleController extends BaseController
             });
         }
 
-        $articles = $articles->orderBy('id', 'desc')->paginate();
+        $articles = $articles->orderBy('id', 'desc')->paginate(20);
 
         return view('front.article.index', compact('articles', 'user'));
+    }
+
+    protected function getPrevArticle($id, $user)
+    {
+        return $user->articles()->where('id', '<', $id)->first();
+    }
+    protected function getNextArticle($id, $user)
+    {
+        return $user->articles()->where('id', '>', $id)->first();
     }
 }

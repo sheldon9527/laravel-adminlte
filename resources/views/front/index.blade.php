@@ -23,12 +23,14 @@
     </li>
     @endforeach
 </ul>
+<style type="text/css" media="screen">
+#page-nav {margin: 30px 0 0;text-align: center;}
+.pagination li {float: left; border:0; margin:0; padding:0; font-size:14px; list-style:none;border-radius: 3px;}
+.pagination .active {color: #fff;background: #3f51b5;}
+</style>
 <nav id="page-nav">
     <div class="inner">
-        <span class="page-number current waves-effect waves-button">1</span>
-        <span class="space waves-effect waves-button">…</span>
-        <a class="page-number waves-effect waves-button" href="">2</a>
-        <a class="extend next waves-effect waves-button" rel="next" href="">下一页</a>
+      {!! $articles->render() !!}
     </div>
 </nav>
 @endsection

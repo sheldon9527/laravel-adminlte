@@ -50,16 +50,20 @@
     </div>
 </div>
 <nav class="post-nav">
+  @if($perArticle)
     <div class="waves-block waves-effect prev fl">
-      <a href="http://www.imys.net/20151113/simulation-of-native-radio-checkbox.html" id="post-prev" class="post-nav-link">
+      <a href="{{route('front.articles.show',[$user->blog_url,$perArticle->id])}}" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">优雅的模拟表单元素radio、checkbox</h4>
+        <h4 class="title">{{$perArticle->title}}</h4>
       </a>
     </div>
+    @endif
+    @if($nextArticle)
     <div class="waves-block waves-effect next fr">
-      <a href="http://www.imys.net/20151023/simple-module-loader.html" id="post-next" class="post-nav-link">
+      <a href="{{route('front.articles.show',[$user->blog_url,$nextArticle->id])}}" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">实现一个简单的模块加载器</h4>
+        <h4 class="title">{{$nextArticle->title}}</h4>
       </a>
     </div>
+    @endif
 </nav>

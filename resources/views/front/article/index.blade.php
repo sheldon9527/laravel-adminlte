@@ -23,5 +23,15 @@
       </div>
     </article>
     @endforeach
+    <style type="text/css" media="screen">
+    #page-nav {margin: 30px 0 0;text-align: center;}
+    .pagination li {float: left; border:0; margin:0; padding:0; font-size:14px; list-style:none;border-radius: 3px;}
+    .pagination .active {color: #fff;background: #3f51b5;}
+    </style>
+    <nav id="page-nav">
+      <div class="inner">
+          {!! $articles->render() !!}
+      </div>
+    </nav>
 </div>
 @endsection
