@@ -1,7 +1,7 @@
 <header class="main-header">
     <a href="{{route('admin.dashboard')}}" class="logo">
         <span class="logo-mini"><b></b></span>
-        <span class="logo-lg"><b>Admin</b></span>
+        <span class="logo-lg"><b>{{app('admin')->user()->blog_url?:app('admin')->user()->email}}</b></span>
     </a>
 
     <nav class="navbar navbar-static-top">

@@ -20,7 +20,7 @@ class Attachment extends BaseModel
 
     public function user()
     {
-        return $this->belongsTo('App\Models\User');
+        return $this->belongsTo('App\Models\Admin');
     }
 
     public static function syncFile($filepath)

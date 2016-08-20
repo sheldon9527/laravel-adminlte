@@ -68,6 +68,7 @@
         <script type="text/javascript">
             require(['jquery'], function($) {
                 $('#table-signup').on('click', '#btn', function() {
+                    $("#btn").val('请重新发送');
                     var email = $(":input[name='email']").val();
                     if(!email){
                         $("#verification").text("*邮箱不能为空");
@@ -84,7 +85,7 @@
                     .done(function(data) {
                         if (data.success == 1) {
                           $("#email").text('验证码已经发送，请去邮箱查看');
-                          $("#btn").val('请重新发送');
+                          $("#btn").val('免费获取验证码');
                         }else {
                             $("#verification").text(data.error);
                         }

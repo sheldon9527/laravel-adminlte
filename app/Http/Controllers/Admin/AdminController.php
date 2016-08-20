@@ -131,7 +131,6 @@ class AdminController extends BaseController
         return redirect(route('admin.users.password.edit'));
     }
 
-
     public function editBlog()
     {
         $user = $this->user();
@@ -140,9 +139,8 @@ class AdminController extends BaseController
             abort(404);
         }
 
-        return view('admin.user.editBlog',compact('user'));
+        return view('admin.user.editBlog', compact('user'));
     }
-
 
     public function updateBlog(UpdateBlogRequest $request)
     {
@@ -152,9 +150,16 @@ class AdminController extends BaseController
             abort(404);
         }
 
-        $user->blog_url =$request->get('blog_url');
+        $user->blog_url = $request->get('blog_url');
 
         $user->save();
+
+        $description = $user->description;
+        $description->brief = $request->get('brief');
+        $description->keyword = $request->get('keyword');
+        $description->description = $request->get('description');
+
+        $description->save();
 
         return redirect(route('admin.users.blog.edit'));
     }

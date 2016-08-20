@@ -12,4 +12,17 @@ class Admin extends BaseModel
     {
         return $this->hasMany('App\Models\Category');
     }
+
+    public function description()
+    {
+        return $this->hasOne('App\Models\AdminDescription');
+    }
+
+    public static function boot()
+    {
+        // 必须先继承原生引导方法 boot
+        parent::boot();
+        // 接下来开始设置事件绑定
+        self::observe('App\Observers\AdminObserver');
+    }
 }

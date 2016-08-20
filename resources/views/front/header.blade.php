@@ -22,6 +22,6 @@
 <header class="content-header">
     <div class="container">
         <h1 class="author">{{$user->blog_url?:$user->email}}'s Blog</h1>
-        <h5 class="subtitle">折腾不在乎成功与否。</h5>
+        <h5 class="subtitle">{{$user->description->brief}}</h5>
     </div>
 </header>
