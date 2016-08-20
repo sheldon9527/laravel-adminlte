@@ -4,15 +4,16 @@
             <i class="icon icon-lg icon-navicon"></i>
         </a>
         <div class="flex-col header-title ellipsis">{{$user->blog_url?:$user->email}}'s Blog</div>
-        <div class="search-wrap" id="search-wrap">
-            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
-                <i class="icon icon-lg icon-chevron-left"></i>
-            </a>
-            <input type="text" id="key" class="search-input " autocomplete="off" placeholder="输入感兴趣的关键字">
-            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
-                <i class="icon icon-lg icon-search"></i>
-            </a>
-        </div>
+        <form action="{{route('front.search.articles.index',$user->blog_url)}}" method="GET">
+          <div class="search-wrap" id="search-wrap">
+              <input type="text" id="key" class="search-input" name="search" placeholder="输入感兴趣的关键字">
+
+              <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                  <i class="icon icon-lg icon-search"></i>
+              </a>
+              <button type="submit" hidden="hidden"></button>
+          </div>
+        </form>
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-share">
             <i class="icon icon-lg icon-share-alt"></i>
         </a>

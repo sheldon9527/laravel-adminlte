@@ -29,6 +29,12 @@ Route::group(['namespace' => 'Front', 'middleware' => ['manager.delete']], funct
         'uses' => 'HomeController@index',
     ]);
 
+    //搜索
+    Route::get('{customPath?}/search', [
+        'as' => 'front.search.articles.index',
+        'uses' => 'SearchController@searchIndex',
+    ]);
+
     Route::get('{customPath?}/u-articles/{id}', [
         'as' => 'front.articles.show',
         'uses' => 'ArticleController@articleShow',
