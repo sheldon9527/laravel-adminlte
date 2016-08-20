@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use App\Models\Admin;
+use App\Models\AdminDescription;
 
 class UpdateAdmin extends Command
 {
