@@ -9,31 +9,31 @@
         searchTpl = document.getElementById('search-tpl').innerHTML,
         searchData;
 
-    function loadData(success) {
-
-        if (!searchData) {
-            var xhr = new XMLHttpRequest();
-            xhr.open('GET', '/content.json', true);
-
-            xhr.onload = function() {
-                if (this.status >= 200 && this.status < 300) {
-                    searchData = JSON.parse(this.response);
-                    success(searchData);
-                } else {
-                    console.error(this.statusText);
-                }
-            };
-
-            xhr.onerror = function() {
-                console.error(this.statusText);
-            };
-
-            xhr.send();
-
-        } else {
-            success(searchData);
-        }
-    }
+    // function loadData(success) {
+    //
+    //     if (!searchData) {
+    //         var xhr = new XMLHttpRequest();
+    //         xhr.open('GET', '/content.json', true);
+    //
+    //         xhr.onload = function() {
+    //             if (this.status >= 200 && this.status < 300) {
+    //                 searchData = JSON.parse(this.response);
+    //                 success(searchData);
+    //             } else {
+    //                 console.error(this.statusText);
+    //             }
+    //         };
+    //
+    //         xhr.onerror = function() {
+    //             console.error(this.statusText);
+    //         };
+    //
+    //         xhr.send();
+    //
+    //     } else {
+    //         success(searchData);
+    //     }
+    // }
 
     function tpl(html, data) {
         return html.replace(/\{\w+\}/g, function(str) {
@@ -116,10 +116,10 @@
         keyInput.value = '';
     });
 
-    back.addEventListener('click', function() {
-        searchWrap.classList.remove('in');
-        Control.hide();
-    });
+    // back.addEventListener('click', function() {
+    //     searchWrap.classList.remove('in');
+    //     Control.hide();
+    // });
 
     document.addEventListener('click', function(e) {
         if (e.target.id !== 'key') {
