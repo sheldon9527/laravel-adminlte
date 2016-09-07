@@ -16,5 +16,5 @@ config/test
 .env.example
 *.swp
 .swo
-/public/assets
+/public/admin.php
 apidoc.json
