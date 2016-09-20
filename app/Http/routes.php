@@ -196,6 +196,12 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'manager'], function () {
             'uses' => 'TagController@index',
         ]);
 
+        //pictures
+        Route::get('pictures',[
+            'as' => 'admin.pictures.index',
+            'uses' => 'PictureController@index'
+        ]);
+
     });
 
 });
