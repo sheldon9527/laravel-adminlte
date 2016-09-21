@@ -23,6 +23,11 @@ class Admin extends BaseModel
         return $this->hasMany('App\Models\Picture');
     }
 
+    public function attachments()
+    {
+        return $this->hasMany('App\Models\Attachment');
+    }
+
     public static function boot()
     {
         // 必须先继承原生引导方法 boot

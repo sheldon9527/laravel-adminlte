@@ -199,7 +199,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'manager'], function () {
         //pictures
         Route::get('pictures',[
             'as' => 'admin.pictures.index',
-            'uses' => 'PictureController@index'
+            'uses' => 'PictureController@index',
         ]);
 
     });

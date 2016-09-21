@@ -15,26 +15,19 @@
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">相册名称</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control" placeholder="相册名称" name="title" value="">
+                                        <select name="name" class="selectpicker" data-width="auto">
+                                            @foreach($pictuteNames as $pictuteName)
+                                                <option value="{{$pictuteName->name}}">{{$pictuteName->name}}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">是否显示</label>
                                     <div class="col-sm-8">
                                         <select name="status" class="selectpicker" data-width="auto">
-                                            <option value="">--</option>
                                             <option value="active">显示</option>
                                             <option value="inactive">不显示</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label">置顶</label>
-                                    <div class="col-sm-8">
-                                        <select name="is_front" class="selectpicker" data-width="auto">
-                                            <option value="">--</option>
-                                            <option value="1">置顶</option>
-                                            <option value="0">不置顶</option>
                                         </select>
                                     </div>
                                 </div>
@@ -45,7 +38,20 @@
                     @include('admin.common.search-tips')
                 </div>
                 <div class="col-sm-12">
-
+                    <div class="row">
+                        @foreach($attachments as $attachment)
+                          <div class="col-sm-6 col-md-4">
+                            <div class="thumbnail">
+                              <img src="{{url($attachment->relative_path)}}" alt="{{$attachment->relative_path}}">
+                              <div class="caption">
+                                <p>
+                                    <a href="#" class="btn btn-primary" data-confirm="Are you sure?">删除</a>
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                          @endforeach
+                    </div>
                 </div>
             </div>
         </div>
