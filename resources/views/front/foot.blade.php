@@ -10,6 +10,7 @@ var BLOG_SHARE = {
     url: ""
 };
 </script>
+
 <div class="global-share" id="global-share">
     <div class="tit">分享到：</div>
     <ul class="reset share-icons">

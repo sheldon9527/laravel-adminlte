@@ -18,6 +18,7 @@ Almsaeed studio just opened a new premium templates page. Hand picked to insure 
        sudo apt-get install bower;
 
 
+
 ###  Installed bootstrap dependency
 
 		bootstrap-select   ## The effect of multi drop
@@ -26,4 +27,3 @@ Almsaeed studio just opened a new premium templates page. Hand picked to insure 
 #### License
 
 The Laravel framework is open-sourced software licensed under the MIT license
-
