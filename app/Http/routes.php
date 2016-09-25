@@ -196,10 +196,18 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'manager'], function () {
             'uses' => 'TagController@index',
         ]);
 
-        //pictures
-        Route::get('pictures',[
-            'as' => 'admin.pictures.index',
-            'uses' => 'PictureController@index',
+        //albums
+        Route::get('albums',[
+            'as' => 'admin.albums.index',
+            'uses' => 'AlbumController@index',
+        ]);
+        Route::post('albums',[
+            'as' => 'admin.albums.store',
+            'uses' => 'AlbumController@store',
+        ]);
+        Route::delete('albums/{id}',[
+            'as' => 'admin.albums.delete',
+            'uses' => 'AlbumController@destory',
         ]);
 
     });

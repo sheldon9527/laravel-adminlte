@@ -8,4 +8,13 @@ class Picture extends BaseModel
     {
         return $this->morphMany('App\Models\Attachment', 'attachable');
     }
+
+    public function attachmentOne()
+    {
+        return $this->morphMany('App\Models\Attachment', 'attachable')->first();
+    }
+    public function attachmentCount()
+    {
+        return $this->morphMany('App\Models\Attachment', 'attachable')->count();
+    }
 }

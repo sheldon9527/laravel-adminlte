@@ -18,7 +18,7 @@ class Admin extends BaseModel
         return $this->hasOne('App\Models\AdminDescription');
     }
 
-    public function pictures()
+    public function albums()
     {
         return $this->hasMany('App\Models\Picture');
     }
