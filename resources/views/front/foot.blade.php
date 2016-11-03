@@ -66,5 +66,15 @@ var BLOG_SHARE = {
     </a>
 </li>
 </script>
-
 <script src="/front/js/search.js"></script>
+<script>
+window.tctipConfig = {
+        buttonImageId:  8,
+        buttonTip:  "dashang",
+        list:{
+            alipay: {qrimg: "/images/alipay.png"},
+            weixin:{qrimg: "/images/weixin.png"},
+        }
+};
+</script>
+<script src="/js/tctip.min.js"></script>

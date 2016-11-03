@@ -16,4 +16,5 @@
 	<meta name="summary" content="{$user->description->description}}">
 	<meta name="twitter:description" content="{$user->description->description}}">
 	<link rel="stylesheet" href="/front/css/style.css">
+	<link rel="stylesheet" href="/front/css/myRewards.css">
 </head>
