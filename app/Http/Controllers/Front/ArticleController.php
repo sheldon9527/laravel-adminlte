@@ -49,10 +49,10 @@ class ArticleController extends BaseController
 
     protected function getPrevArticle($id, $user)
     {
-        return $user->articles()->where('id', '<', $id)->first();
+        return $user->articles()->where('id', '<', $id)->orderBy('id','desc')->first();
     }
     protected function getNextArticle($id, $user)
     {
-        return $user->articles()->where('id', '>', $id)->first();
+        return $user->articles()->where('id', '>', $id)->orderBy('id','desc')->first();
     }
 }
