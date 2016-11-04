@@ -8,7 +8,7 @@
                 <a class="post-title-link" href="{{route('front.articles.show',[$user->blog_url,$article->id])}}">{{$article->title}}</a>
             </h3>
             <div class="post-meta">
-              <time datetime="{{$article->created_at}}" itemprop="datePublished" class="post-time">{{$article->created_at}}</time>
+              <time datetime="{{date('Y-m-d',strtotime($article->created_at))}}" itemprop="datePublished" class="post-time">{{date('Y-m-d',strtotime($article->created_at))}}</time>
             </div>
 
             <div class="post-content" id="post-content" itemprop="postContent">
