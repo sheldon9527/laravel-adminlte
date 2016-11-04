@@ -53,6 +53,6 @@ class ArticleController extends BaseController
     }
     protected function getNextArticle($id, $user)
     {
-        return $user->articles()->where('id', '<', $id)->orderBy('id','asc')->first();
+        return $user->articles()->where('id', '<', $id)->orderBy('id','desc')->first();
     }
 }
