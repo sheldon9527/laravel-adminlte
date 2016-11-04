@@ -25,7 +25,6 @@
     <link href='/css/admin.css' rel="stylesheet" />
 
     {{-- requrejs --}}
-    <script src="/bower/requirejs/require.js"></script>
-    <script src="/js/admin.js"></script>
-
+    <!-- <script src="/bower/requirejs/require.js"></script> -->
+    <!-- <script src="/js/admin.js"></script> -->
 </head>
