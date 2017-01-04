@@ -12,15 +12,21 @@
 			</div>
 		</div>
 		<ul class="nav flex-col">
-			<li class="waves-block waves-effect active">
+			<li class="waves-block waves-effect {{
+                        \Route::is('front.index') ? 'active' : null
+                    }}">
 				<a href="{{route('front.index',$user->blog_url)}}"><i class="icon icon-lg icon-home"></i>Home</a>
 			</li>
 
-			<li class="waves-block waves-effect">
+			<li class="waves-block waves-effect {{
+                        \Route::is('front.articles.*') ? 'active' : null
+                    }}">
 				<a href="{{route('front.articles.index',$user->blog_url)}}"><i class="icon icon-lg icon-archives"></i>Archives</a>
 			</li>
 
-			<li class="waves-block waves-effect">
+			<li class="waves-block waves-effect {{
+                        \Route::is('front.tags.*') ? 'active' : null
+                    }}">
 				<a href="{{route('front.tags.show',$user->blog_url)}}"><i class="icon icon-lg icon-tags"></i>Tags</a>
 			</li>
             @if($user->gitHub_name)
