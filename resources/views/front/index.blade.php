@@ -4,9 +4,9 @@
     @foreach($articles as $article)
     <li class="post-list-item">
         <article id="post-vscode-extension-qiniu-upload" class="article article-type-post" itemprop="blogPost">
-            <h3 class="post-title" itemprop="name">
+            <h2 class="post-title" itemprop="name">
                 <a class="post-title-link" href="{{route('front.articles.show',[$user->blog_url,$article->id])}}">{{$article->title}}</a>
-            </h3>
+            </h2>
             <div class="post-meta">
               <time datetime="{{date('Y-m-d',strtotime($article->created_at))}}" itemprop="datePublished" class="post-time">{{date('Y-m-d',strtotime($article->created_at))}}</time>
             </div>

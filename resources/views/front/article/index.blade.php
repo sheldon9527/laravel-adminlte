@@ -2,11 +2,11 @@
 @section('content')
 <div class="container body-wrap">
   @foreach($articles as $article)
-  <h3 class="archive-separator"><?php echo date('Y', strtotime($article->created_at))?></h3>
+  <h3 class="archive-separator"></h3>
     <article class="archive-article">
       <div class="archive-article-date">
          <time datetime="" itemprop="datePublished" class="post-time">
-           <?php echo date('m-d', strtotime($article->created_at))?>
+           <?php echo date('Y-m-d', strtotime($article->created_at))?>
         </time>
       </div>
       <div class="archive-article-inner">
