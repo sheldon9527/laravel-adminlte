@@ -6,24 +6,26 @@ Almsaeed studio just opened a new premium templates page. Hand picked to insure 
 
 #### Github
 
-1.Fork the repository
-2.Clone to your machine
+1.安装git
+
+    sudo apt-get install git (for ubuntu)
+    yum install git          (for centos)
+    brew install git         (for mac)
+
+2.克隆
 
      git@github.com:sheldon9527/laravel-adminlte.git
 
-### Needed for development relying on
+3.安装依赖
 
-       sudo apt-get install node;
-       sudo apt-get install npm;
-       sudo apt-get install bower;
+    3.1 install composer
+        - 执行 composer install
+    3.2 install node
+    3.3 install npm
+        - 执行 npm install
+    3.4 install bower;
+        - 执行 npm install bower
 
-
-
-###  Installed bootstrap dependency
-
-		bootstrap-select   ## The effect of multi drop
-		bootstrap-wysiwyg  ## Rich Text Editor
-		eonasdan-bootstrap-datetimepicker ## Date/time to choose
 #### License
 
-The Laravel framework is open-sourced software licensed under the MIT license
+    [sheldon](http://zhangxiang.pub:8080/)
