@@ -141,7 +141,7 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label"><span class="text-red">*</span>名称:</label>
                             <div class="col-sm-8">
-                                @include('admin.album.pictures.attachment', ['tag' => 'draftFirst', 'attachments' => '', 'modal_id' => 'defaraFirstModal'])
+                        
                             </div>
                         </div>
 
