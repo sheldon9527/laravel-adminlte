@@ -49,7 +49,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-th"></i> <span>个人简历</span><small class="label pull-right bg-green">new</small></a>
+                    <a href="http://zhangxiang.pub:3000/"><i class="fa fa-th"></i> <span>个人简历</span><small class="label pull-right bg-green">new</small></a>
                 </li>
                 <li class="{{
                         \Route::is('admin.albums.*') ? 'active' : null

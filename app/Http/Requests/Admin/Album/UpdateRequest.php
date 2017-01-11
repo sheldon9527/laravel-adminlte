@@ -4,7 +4,7 @@ namespace App\Http\Requests\Admin\Album;
 
 use App\Http\Requests\Admin\Request;
 
-class StoreRequest extends Request
+class UpdateRequest extends Request
 {
     public function rules()
     {

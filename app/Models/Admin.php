@@ -20,7 +20,7 @@ class Admin extends BaseModel
 
     public function albums()
     {
-        return $this->hasMany('App\Models\Picture');
+        return $this->hasMany('App\Models\Picture')->orderBy('pictures.status')->orderBy('pictures.created_at','desc');
     }
 
     public function attachments()

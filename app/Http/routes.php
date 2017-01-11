@@ -209,6 +209,10 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'manager'], function () {
             'as' => 'admin.albums.delete',
             'uses' => 'AlbumController@destory',
         ]);
+        Route::put('albums/{id}',[
+            'as' => 'admin.albums.update',
+            'uses' => 'AlbumController@update',
+        ]);
 
     });
 

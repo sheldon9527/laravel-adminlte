@@ -29,6 +29,9 @@
                     }}">
 				<a href="{{route('front.tags.show',$user->blog_url)}}"><i class="icon icon-lg icon-tags"></i>Tags</a>
 			</li>
+            <li class="waves-block waves-effect">
+                <a href="http://zhangxiang.pub:3000/" target="_blank"><i class="icon icon-lg icon-user"></i>Resume</a>
+            </li>
             @if($user->gitHub_name)
 			<li class="waves-block waves-effect">
 				<a href="https://github.com/{{$user->gitHub_name}}" target="_blank"><i class="icon icon-lg icon-github"></i>Github</a>
