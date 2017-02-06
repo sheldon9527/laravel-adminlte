@@ -141,9 +141,14 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label"><span class="text-red">*</span>名称:</label>
                             <div class="col-sm-8">
-                        
+
                             </div>
                         </div>
+
+                        <label class="btn btn-info btn-file">
+                            <input name="image" type="file" accept="image/*" data-image-preview="#picture-preview">
+                                                选择
+                        </label>
 
                     </div>
                     <div class="modal-footer">

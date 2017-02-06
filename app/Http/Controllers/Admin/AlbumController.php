@@ -1,28 +1,37 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+
 use Illuminate\Http\Request;
-use App\Http\Requests\Admin\Album\{StoreRequest,UpdateRequest};
+use App\Http\Requests\Admin\Album\StoreRequest;
+use App\Http\Requests\Admin\Album\UpdateRequest;
 use App\Models\Picture;
 
 class AlbumController extends BaseController
 {
+    /**
+     * [index 列表]
+     * @param  Request $request [description]
+     * @return [type]           [description]
+     */
     public function index(Request $request)
     {
-
         $user = $this->user();
         $name = $request->get('name');
         $status = $request->get('status');
         $searchColumns = ['name', 'status'];
         $pictuteNames =$user->albums;
 
-        return view('admin.album.index', compact('pictuteNames','searchColumns'));
+        return view('admin.album.index', compact('pictuteNames', 'searchColumns'));
     }
 
-
+    /**
+     * [store 创建]
+     * @param  StoreRequest $request [description]
+     * @return [type]                [description]
+     */
     public function store(StoreRequest $request)
     {
-
         $user = $this->user();
         $album = new Picture();
         $album->admin_id = $user->id;
@@ -35,8 +44,13 @@ class AlbumController extends BaseController
         return redirect(route('admin.albums.index'));
     }
 
-
-    public function update($id,UpdateRequest $request)
+    /**
+     * [update 更新]
+     * @param  [type]        $id      [description]
+     * @param  UpdateRequest $request [description]
+     * @return [type]                 [description]
+     */
+    public function update($id, UpdateRequest $request)
     {
         $user = $this->user();
         $album = $user->albums()->find($id);
@@ -51,11 +65,14 @@ class AlbumController extends BaseController
         $album->save();
 
         return redirect(route('admin.albums.index'));
-
     }
 
 
-
+    /**
+     * [destory 删除]
+     * @param  [type] $id [description]
+     * @return [type]     [description]
+     */
     public function destory($id)
     {
         $user = $this->user();
