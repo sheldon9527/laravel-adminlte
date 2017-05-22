@@ -18,4 +18,5 @@ config/test
 .swo
 /public/admin.php
 apidoc.json
-public/docs/
+/public/docs
+/public/assets

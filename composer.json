@@ -12,7 +12,8 @@
         "guzzlehttp/guzzle": "6.2",
         "zgldh/qiniu-laravel-storage": "^0.4.1",
         "baum/baum": "^1.1",
-        "nesbot/carbon": "^1.21"
+        "nesbot/carbon": "^1.21",
+        "geohash/geohash": "^1.0"
     },
     "require-dev": {
        "fzaninotto/faker": "~1.4",
@@ -54,5 +55,11 @@
     },
     "config": {
         "preferred-install": "dist"
+    },
+    "repositories": {
+    "packagist": {
+      "type": "composer",
+      "url": "https://packagist.phpcomposer.com"
     }
+  }
 }
