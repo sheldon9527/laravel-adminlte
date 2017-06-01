@@ -73,9 +73,4 @@
             </div>
         </div>
     </div>
-<!-- <script type="text/javascript" src="/editor/ueditor.config.js"></script>
-<script type="text/javascript" src="/editor/ueditor.all.js"></script>
-<script type="text/javascript">
-	var ue = UE.getEditor('container');
-</script> -->
 @endsection
