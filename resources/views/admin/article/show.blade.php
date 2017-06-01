@@ -17,19 +17,13 @@
 						<div class="form-group">
 							<label for="">内容</label>
                             <?php echo $article->content?>
-						</div>
+                        </div>
                         <div class="form-group">
                             <label for="">标签</label>
                             <div>
                                 @foreach($article->tags()->get() as $tag)
                                 <button type="button" class="btn-primary">{{$tag->name}}</button>
                                 @endforeach
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="">锚点</label>
-                            <div>
-                                <input type="text" value="{{$article->catalog}}" class="form-control" readonly>
                             </div>
                         </div>
                         <div class="form-group">

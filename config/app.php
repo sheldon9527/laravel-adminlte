@@ -139,6 +139,8 @@ return [
         Baum\Providers\BaumServiceProvider::class,
         //qiniu
         zgldh\QiniuStorage\QiniuFilesystemServiceProvider::class,
+        //markdown
+        YuanChao\Editor\EndaEditorServiceProvider::class
     ],
     /*
     |--------------------------------------------------------------------------
@@ -181,5 +183,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        //markdown
+        'EndaEditor' => YuanChao\Editor\Facade\EndaEditorFacade::class,
     ],
 ];

@@ -13,7 +13,8 @@
         "zgldh/qiniu-laravel-storage": "^0.4.1",
         "baum/baum": "^1.1",
         "nesbot/carbon": "^1.21",
-        "geohash/geohash": "^1.0"
+        "geohash/geohash": "^1.0",
+		"yuanchao/laravel-5-markdown-editor": "dev-master"
     },
     "require-dev": {
        "fzaninotto/faker": "~1.4",

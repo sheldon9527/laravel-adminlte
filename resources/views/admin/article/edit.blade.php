@@ -1,5 +1,5 @@
 @extends('admin.common.layout')
-
+@include('editor::head')
 @section('content')
     <div class="row">
         <div class="col-md-12">
@@ -21,30 +21,21 @@
                                 <label><span class="text-red">*</span>描述</label>
                                 <textarea type="text" name="description" rows="3" cols="62" class="form-control" >{{$article->description}}</textarea>
                             </div>
-							<div class="form-group">
-								<label for=""><span class="text-red">*</span>内容</label>
-								<style>
-  									#container{
-										width: auto;
-										min-height: 300px;
-									}
-								</style>
-								<script id="container" name="content" type="text/plain">
-                                <?php  echo $article->content; ?>
-								</script>
-							</div>
+
+                            <div class="form-group">
+                                <label for=""><span class="text-red">*</span>内容</label>
+
+                                <div class="editor">
+                                    <textarea rows="15" cols="165" id='myEditor' name="content" >{{$article->markdown}}</textarea>
+                                </div>
+                            </div>
                             <div class="form-group">
                                 <label for=""><span class="text-red">*</span>标签</label>
                                 <div>
                                     <input type="text" name="tag" value="@foreach($article->tags as $tag){{$tag->name.','}}@endforeach" class="form-control" placeholder="标签,多个标签用英文逗号隔开" required="">
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="">锚点</label>
-                                <div>
-                                    <input type="text" name="catalog" value="{{$article->catalog}}" class="form-control" placeholder="锚点,多个标签用英文逗号隔开">
-                                </div>
-                            </div>
+
                             <div class="form-group">
                                 <label for=""><span class="text-red">*</span>系统分类:</label>
                                 <select id="test_select" name="category_id" class="selectpicker">
@@ -74,11 +65,11 @@
                                     </select>
                                 </div>
                             </div>
-							<div class="form-group">
-								<div>
-									<button class="btn btn-primary" type="submit">保存</button>
-								</div>
-							</div>
+                            <div class="form-group">
+                                <div>
+                                    <button class="btn btn-primary" type="submit">保存</button>
+                                </div>
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -88,6 +79,6 @@
 <script type="text/javascript" src="/editor/ueditor.config.js"></script>
 <script type="text/javascript" src="/editor/ueditor.all.js"></script>
 <script type="text/javascript">
-	var ue = UE.getEditor('container');
+    var ue = UE.getEditor('container');
 </script>
 @endsection
