@@ -16,6 +16,8 @@ config/test
 .env.example
 *.swp
 .swo
+.tags
+.tags1
 /public/admin.php
 apidoc.json
 /public/docs
