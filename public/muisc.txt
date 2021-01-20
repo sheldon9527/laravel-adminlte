@@ -1,0 +1,22 @@
+{
+	result: {
+	state: 200,
+	reason: ""
+	},
+	data: {
+		data: [
+			{
+				id: 1,
+				title: "Trails of the Past",
+				artist: "Tim Glemser",
+				mp3: "https://music.163.com/song/media/outer/url?id=35403119.mp3",
+				play_url: "Trails of the Past.mp3",
+				cover: "https://p2.music.126.net/6b1cQpG-uQK4NudfpCbUlw==/3378799233341852.jpg",
+				duration:209.423,
+				filesize:
+			}
+
+		],
+		total: 1
+	}
+}

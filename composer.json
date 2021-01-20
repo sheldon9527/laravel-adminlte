@@ -14,7 +14,8 @@
         "baum/baum": "^1.1",
         "nesbot/carbon": "^1.21",
         "geohash/geohash": "^1.0",
-		"yuanchao/laravel-5-markdown-editor": "dev-master"
+		"yuanchao/laravel-5-markdown-editor": "dev-master",
+		 "worm/getclientiplib": "^1.0"
     },
     "require-dev": {
        "fzaninotto/faker": "~1.4",
